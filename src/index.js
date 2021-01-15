@@ -5,7 +5,8 @@ const selectDropdownInput = document.querySelector('.js-select-input-dropdown');
 const student = document.querySelector('.js-student-check');
 const nonStudent = document.querySelector('.js-non-student-check');
 const gmailInput = document.querySelector('.js-gmail'),
-    studentNumInput = document.querySelector('.js-student-num');
+    studentNumInput = document.querySelector('.js-student-num'),
+    studNumSection = document.querySelector('.js-std-num-section');
 
 let prevState = 0;
 
@@ -14,31 +15,19 @@ nonStudent.addEventListener('click', selectMode);
 
 function selectMode(event) {
     if (event.target.dataset.mode === 'student') {
-        if (!gmailInput.disabled) {
-            gmailInput.disabled = true;
+        if (studentNumInput.disabled) {
             studentNumInput.disabled = false;
-            gmailInput.value = null;
-
-            if (studentNumInput.classList.contains('toslide-normal-gray')) {
-                studentNumInput.classList.remove('toslide-normal-gray')
-            }
-            if (!gmailInput.classList.contains('toslide-normal-gray')) {
-                gmailInput.classList.add('toslide-normal-gray')
-            }
+        }
+        if (studNumSection.classList.contains('d-none')) {
+            studNumSection.classList.remove('d-none')
         }
     }
     else {
-        if (!studentNumInput.disabled) {
-            studentNumInput.disabled = true;
-            gmailInput.disabled = false;
-            studentNumInput.value = null;
-
-            if (gmailInput.classList.contains('toslide-normal-gray')) {
-                gmailInput.classList.remove('toslide-normal-gray')
-            }
-            if (!studentNumInput.classList.contains('toslide-normal-gray')) {
-                studentNumInput.classList.add('toslide-normal-gray')
-            }
+        studentNumInput.value = null;
+        studentNumInput.disabled = true;
+        
+        if (!studNumSection.classList.contains('d-none')) {
+            studNumSection.classList.add('d-none')
         }
     }
 }
@@ -72,7 +61,7 @@ function showSelectBox() {
     selectDropdownInput.classList.add('d-none');
     select.classList.remove('d-none');
 
-    selectInput.disabled = true;
+    selectInput.readonly = true;
     selectInput.value = null;
     select.selectedIndex = 0;
 }
@@ -82,5 +71,16 @@ function test(event) {
     console.log(event.target.checked);
 }
 
-select.addEventListener('click', handleChangeSelect);
-selectDropdownInput.addEventListener('click', showSelectBox);
+function fetchUserGmail() {
+    gmailInput.value = "sample@gmail.com";
+    gmailInput.readOnly = true; // need to make gmail fetch function
+}
+
+function init() {
+    fetchUserGmail();
+    select.addEventListener('click', handleChangeSelect);
+    selectDropdownInput.addEventListener('click', showSelectBox);
+}
+
+
+init();
