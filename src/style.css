@@ -1,0 +1,136 @@
+:root {
+    --toslide-blue: #4535f3;
+    --toslide-gray: #DADCE0 ;
+    --toslide-normal-gray: #ADAFB3;
+    --toslide-background-gray:#F4F5F6;
+    --toslide-font-gray: #7C7D80;
+    --border-radius: 5px;
+    --toslide-font-size: 14px;
+    --margin-small: 8px;
+    --margin-middle: 12px;
+    --padding-very-small: 4px;
+    --padding-small: 8px;
+    --padding-middle: 12px;
+}
+
+body {
+    background-color: var(--toslide-background-gray) !important;
+    font-family: Roboto !important;
+}
+
+button {
+    all: unset;
+}
+
+select {
+    all: unset;
+    background: url('./images/select_dropdown.svg') no-repeat 100%;
+    background-size: 2rem 2rem;
+}
+
+select,
+select option {
+    font-size: var(--toslide-font-size) !important;
+    color: var(--toslide-font-gray);
+    background-color: white;
+}
+
+input[type="text"],
+input[type="email"] {
+    all: unset;
+    font-size: var(--toslide-font-size);
+    background-color: white;
+}
+
+.toslide-normal-gray {
+    background-color: var(--toslide-gray) !important;
+}
+
+.toslide-font-bold {
+    font: normal normal 700 16px/19px Roboto;
+}
+
+.toslide-font-medium {
+    font: normal normal 600 14px/16px Roboto;
+}
+
+.toslide-font-medium-label {
+    font: normal normal 600 16px/19px Roboto;
+}
+
+.toslide-font-normal {
+    font: normal normal 500 16px/19px Roboto;
+}
+
+/* header */
+.toslide__version {
+    font-size: 0.8rem;
+    color: var(--toslide-normal-gray);
+}
+
+.toslide-back-btn {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.logo {
+    cursor: pointer;
+    transform: scale(0.8);
+}
+
+/* main */
+.mode-select {
+    border-bottom: 1px solid var(--toslide-gray);
+}
+
+.toslide-btn-group {
+    background-color: var(--toslide-gray);
+    max-width: 720px;
+    border-radius: var(--border-radius);
+    padding: var(--padding-very-small);
+}
+
+.toslide-btn-group label {
+    cursor: pointer;
+    border-radius: var(--border-radius);
+}
+
+.toslide-btn-group .radio-input {
+    display: none;
+}
+
+.toslide-btn-group .radio-input:checked + label {
+    background-color: white;
+    box-shadow:  0px 0.5px 3px #00000033;
+}
+
+.input-section input, 
+.input-section select {
+    border-radius: var(--border-radius);
+    padding: var(--padding-small) var(--padding-middle);
+    border: 1px solid var(--toslide-gray);
+    width: 80%;
+}
+
+.input-section label {
+    color: var(--toslide-font-gray);
+}
+
+.select-input-dropdown {
+    position: absolute;
+    top: auto;
+    right: 1px;
+    width: 2rem;
+    height: 2rem;
+}
+
+.submit-btn {
+    width: 100% !important;
+    background-color: var(--toslide-blue);
+    color: white;
+    padding: var(--padding-middle) var(--padding-middle) !important;
+}
+
+@media screen and (min-width: 768px) {
+
+}
