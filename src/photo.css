@@ -130,13 +130,16 @@ select {
   padding-bottom: var(--padding-small);
 }
 
-.photo-items span,
-.photo-items button {
+.photo-items .photo-num,
+.photo-items .photo-delete-btn {
   height: 10%;
 }
 
-.photo-items span {
-  text-align: center;
+.photo-items .photo-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--toslide-font-gray);
 }
 
 .photo-items .image-section {
