@@ -44,6 +44,10 @@ input[type="email"] {
   background-color: var(--toslide-gray) !important;
 }
 
+.toslide-font-small-bold {
+  font: normal normal 700 12px/14px Roboto;
+}
+
 .toslide-font-bold {
   font: normal normal 700 16px/19px Roboto;
 }

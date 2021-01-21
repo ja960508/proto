@@ -8,21 +8,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
+    <script src="./src/photo.js" defer></script>
     <title>Document</title>
 </head>
 <body>
     <aside class="photo-toggle-section">
         <div class="header-wrap">
             <div class="header d-flex justify-content-center position-relative py-2">
-                <button class="position-absolute start-0 toslide-back-btn">
+                <button class="position-absolute toslide-back-btn">
                     <img src="./src/images/chevron-left.svg" alt="toslide-back-btn" class="util-image">
                 </button>
                 <div class="title d-flex align-items-center">
-                    <img src="./src/images/photo_section/PNG_사진.png" alt="photo_icon" class="util-image">
+                    <img src="./src/images/photo_section/PNG_photo.png" alt="photo_icon" class="util-image">
                     <span class="title-text toslide-font-bold ps-2">사진</span>
                 </div>
-                <button class="section-btn position-absolute end-0 photo-section-cancle">
-                    <img src="./src//images/photo_section/PNG_닫기버튼_검정.png" alt="cancle_btn" class="util-image">
+                <button class="section-btn position-absolute photo-section-cancle">
+                    <img src="./src//images/photo_section/PNG_cancle_black.png" alt="cancle_btn" class="util-image">
                 </button>
             </div>
         </div>
@@ -48,59 +49,19 @@
                 </div>
             </div>
         </div>
-
-        <ul class="photo-layout d-flex flex-column px-2 py-3">
-            <li class="photo-items">
-                <div class="photo-num col-1">1</div>
-                <div class="image-section col-10">
-                    <img src="./src/images/sample.jpg" alt="sample">
-                    <div class="image-info">
-                        <div class="image-keyword">hello</div>
-                        <div class="image-title">1231335.png</div>
-                        <div class="image-sender">B511153 이주암</div>
-                    </div>
-                </div>
-                <button class="photo-delete-btn col-1">
-                    <img src="./src//images/photo_section/PNG_닫기버튼_검정.png" alt="cancle_btn">
-                </button>
-            </li>
-            <li class="photo-items">
-                <span class="photo-num col-1">2</span>
-                <div class="image-section col-10">
-                    <img src="./src/images/sample.jpg" alt="sample">
-                    <div class="image-info">
-                        <div class="image-keyword">hello</div>
-                        <div class="image-title">1231231551335.png</div>
-                        <div class="image-sender">이주암</div>
-                    </div>
-                </div>
-                <button class="photo-delete-btn col-1">
-                    <img src="./src//images/photo_section/PNG_닫기버튼_검정.png" alt="cancle_btn">
-                </button>
-            </li>
-            <li class="photo-items">
-                <span class="photo-num col-1">3</span>
-                <div class="image-section col-10">
-                    <img src="./src/images/sample.jpg" alt="sample">
-                    <div class="image-info">
-                        <div class="image-keyword">hello</div>
-                        <div class="image-title">1231231551335.png</div>
-                        <div class="image-sender">이주암</div>
-                    </div>
-                </div>
-                <button class="photo-delete-btn col-1">
-                    <img src="./src//images/photo_section/PNG_닫기버튼_검정.png" alt="cancle_btn">
-                </button>
-            </li>
+        <ul class="photo-layout d-flex flex-column py-3">
         </ul>
         <div class="footer-wrap">
             <div class="footer mx-2 d-flex justify-content-around">
+                <button class="select-function make-sample">
+                    <span class="function-text">샘플 추가</span>
+                </button>
                 <button class="select-function">
-                    <img src="./src/images/photo_section/PNG_보내기_검정.png" alt="send_image" class="util-image">
+                    <img src="./src/images/photo_section/PNG_send_black.png" alt="send_image" class="util-image">
                     <span class="function-text">개인 메세지 전송</span>
                 </button>
                 <button class="select-function">
-                    <img src="./src/images/photo_section/PNG_모두삭제_검정.png" alt="delete_all" class="util-image">
+                    <img src="./src/images/photo_section/PNG_delete_all_black.png" alt="delete_all" class="util-image">
                     <span class="function-text">사진 모두 삭제</span>
                 </button>
             </div>

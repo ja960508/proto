@@ -22,14 +22,19 @@ body {
 
 img {
   width: 100%;
+  height: auto;
 }
 
 select {
   border-radius: var(--border-radius);
-  border: 1px solid black;
+  border: 1px solid var(--toslide-gray);
   width: 35%;
   background-color: white;
-  padding: 0 var(--padding-very-small);
+  padding: var(--padding-very-small) var(--padding-small);
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
 }
 
 .photo-toggle-section {
@@ -77,10 +82,12 @@ select {
 .toslide-back-btn {
   cursor: pointer;
   transform: scale(0.8);
+  left: 0.5rem;
 }
 
 .photo-section-cancle {
   display: none;
+  right: 0.5rem;
 }
 
 .toslide-btn-group {
@@ -127,7 +134,9 @@ select {
 .photo-items {
   display: flex;
   justify-content: space-around;
-  padding-bottom: var(--padding-small);
+  align-items: center;
+  padding: var(--padding-middle) 0;
+  border-bottom: 1px solid var(--toslide-gray);
 }
 
 .photo-items .photo-num,
@@ -163,18 +172,29 @@ select {
 }
 
 .image-keyword {
-  width: 15%;
   text-align: center;
-  border: 1px solid var(--toslide-blue);
+  border: 1px solid rgba(69, 53, 243, 0.25);
   border-radius: var(--border-gentle-radius);
   color: var(--toslide-blue);
+  padding: 2px 6px;
 }
 
-.image-info {
+.image-info1 {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 4px 4px;
+  padding-bottom: var(--padding-very-small);
+}
+
+.image-sender {
+  color: var(--toslide-font-gray);
+}
+
+.image-info2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px 10px;
 }
 
 @media screen and (min-height: 912px) {
@@ -201,7 +221,7 @@ select {
     align-items: center;
   }
   .photo-toggle-section {
-    max-width: 360px;
+    max-width: 320px;
   }
 
   .toslide-back-btn {
