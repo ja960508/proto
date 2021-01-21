@@ -42,6 +42,7 @@ input[type="checkbox"] {
   height: 100%;
   font-size: 0.8rem;
   margin: 0;
+  float: right;
 }
 
 .header-wrap {
@@ -124,7 +125,7 @@ input[type="checkbox"] {
   background-color: white;
   overflow-y: scroll;
   margin: 0;
-  padding: var(--padding-small) 0;
+  padding: 0;
 }
 
 .util-image {
@@ -142,6 +143,16 @@ input[type="checkbox"] {
 .photo-items .photo-num,
 .photo-items .photo-delete-btn {
   height: 10%;
+}
+
+.photo-delete-btn {
+  border-radius: 50%;
+  background-color: var(--toslide-background-gray);
+  transform: scale(0.8);
+}
+
+.photo-delete-btn:focus {
+  outline: 0;
 }
 
 .photo-items .photo-num {
@@ -221,7 +232,7 @@ input[type="checkbox"] {
     align-items: center;
   }
   .photo-toggle-section {
-    max-width: 320px;
+    max-width: 360px;
   }
 
   .toslide-back-btn {
