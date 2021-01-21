@@ -37,15 +37,15 @@ function makeList() {
   const imageInfo1 = document.createElement("div");
 
   li.classList.add("photo-items");
-  photoNum.classList.add("photo-num", "col-1");
+  photoNum.classList.add("photo-num", "col-1", "toslide-font-small-normal");
   imageContainer.classList.add("image-container", "col-10");
   imageSection.classList.add("image-section");
   photoDeleteBtn.classList.add("photo-delete-btn", "col-1");
   imageInfo1.classList.add("image-info1");
   imageInfo2.classList.add("image-info2");
-  imageKeyword.classList.add("image-keyword", "toslide-font-small-bold");
-  imagetitle.classList.add("image-title");
-  imagesender.classList.add("image-sender");
+  imageKeyword.classList.add("image-keyword", "toslide-font-small-medium");
+  imagetitle.classList.add("image-title", "toslide-font-large-normal");
+  imagesender.classList.add("image-sender", "toslide-font-small-normal");
 
   photoNum.innerHTML = imageNumber;
   sampleImage.src = sample.image;

@@ -56,8 +56,20 @@ input[type="email"] {
   font: normal normal 600 14px/16px Roboto;
 }
 
+.toslide-font-small-medium {
+  font: normal normal 600 12px/14px Roboto;
+}
+
 .toslide-font-medium-label {
   font: normal normal 600 16px/19px Roboto;
+}
+
+.toslide-font-small-normal {
+  font: normal normal 500 12px/14px Roboto;
+}
+
+.toslide-font-large-normal {
+  font: normal normal 500 12px/20px Roboto;
 }
 
 .toslide-font-normal {
