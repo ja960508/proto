@@ -88,9 +88,11 @@ function checkDevice() {
     deviceFlag = filter.indexOf(navigator.platform.toLowerCase()) < 0;
 
     if (deviceFlag < 0) {
-      backBtn.classList.toggle("mobile");
+      backBtn.classList.add("mobile");
+      cancleBtn.classList.add("mobile");
     } else {
-      cancleBtn.classList.toggle("mobile");
+      backBtn.classList.remove("mobile");
+      cancleBtn.classList.remove("mobile");
     }
   }
 }
