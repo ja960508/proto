@@ -90,9 +90,11 @@ function checkDevice() {
     if (deviceFlag < 0) {
       backBtn.classList.add("mobile");
       cancleBtn.classList.add("mobile");
+      alert("mobile");
     } else {
       backBtn.classList.remove("mobile");
       cancleBtn.classList.remove("mobile");
+      alert("web");
     }
   }
 }

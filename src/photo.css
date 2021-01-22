@@ -49,6 +49,7 @@ input[type="checkbox"] {
   height: 100%;
   font-size: 0.8rem;
   margin: 0;
+  max-width: 360px;
 }
 
 .header-wrap {
@@ -190,6 +191,11 @@ input[type="checkbox"] {
   width: 100%;
 }
 
+.lecturer-image-send {
+  box-shadow: 0px 0px 8px #0000001a;
+  border-radius: 15px;
+}
+
 .image-keyword {
   text-align: center;
   border: 1px solid rgba(69, 53, 243, 0.25);
@@ -222,4 +228,7 @@ input[type="checkbox"] {
 }
 .photo-section-cancle.mobile {
   display: none;
+}
+.photo-toggle-section.mobile {
+  max-width: 100%;
 }
