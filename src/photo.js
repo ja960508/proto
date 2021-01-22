@@ -7,6 +7,7 @@ const sample = {
 };
 const targetUl = document.querySelector(".photo-layout");
 const sampleBtn = document.querySelector(".make-sample");
+const body = document.querySelector("body");
 
 function addSampleList() {
   makeList();
@@ -64,4 +65,36 @@ function makeList() {
   targetUl.appendChild(li);
 }
 
+function setPhotoLayoutHeight() {
+  const body = document.querySelector("body");
+  const header = document.querySelector(".header-wrap").offsetHeight;
+  const btnGruop = document.querySelector(".btn-group-wrap").offsetHeight;
+  const option = document.querySelector(".option-wrap").offsetHeight;
+  const footer = document.querySelector(".footer-wrap").offsetHeight;
+  const photoLayout = document.querySelector(".photo-layout");
+
+  photoLayout.style.height =
+    body.offsetHeight - (header + btnGruop + option + footer) + "px";
+}
+
+function checkDevice() {
+  const filter = "win16|win32|win64|mac";
+  const backBtn = document.querySelector(".toslide-back-btn");
+  const cancleBtn = document.querySelector(".photo-section-cancle");
+
+  let deviceFlag;
+
+  if (navigator.platform) {
+    deviceFlag = filter.indexOf(navigator.platform.toLowerCase()) < 0;
+
+    if (deviceFlag < 0) {
+      backBtn.classList.toggle("mobile");
+    } else {
+      cancleBtn.classList.toggle("mobile");
+    }
+  }
+}
+
 sampleBtn.addEventListener("click", addSampleList);
+window.onload = setPhotoLayoutHeight();
+checkDevice();
