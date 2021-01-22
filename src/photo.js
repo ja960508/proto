@@ -9,6 +9,26 @@ const targetUl = document.querySelector(".photo-layout");
 const sampleBtn = document.querySelector(".make-sample");
 const body = document.querySelector("body");
 
+function is_mobile() {
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    return true;
+  }
+
+  if (typeof window.orientation !== "undefined") {
+    return true;
+  }
+
+  let iOSios =
+    !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  if (iOSios) return true;
+
+  return false;
+}
+
 function addSampleList() {
   makeList();
 }
@@ -78,24 +98,22 @@ function setPhotoLayoutHeight() {
 }
 
 function checkDevice() {
-  const filter = "win16|win32|win64|mac";
   const backBtn = document.querySelector(".toslide-back-btn");
   const cancleBtn = document.querySelector(".photo-section-cancle");
+  const photoSection = document.querySelector(".photo-toggle-section");
 
-  let deviceFlag;
+  console.log(is_mobile());
 
-  if (navigator.platform) {
-    deviceFlag = filter.indexOf(navigator.platform.toLowerCase()) < 0;
-
-    if (deviceFlag < 0) {
-      backBtn.classList.add("mobile");
-      cancleBtn.classList.add("mobile");
-      alert("mobile");
-    } else {
-      backBtn.classList.remove("mobile");
-      cancleBtn.classList.remove("mobile");
-      alert("web");
-    }
+  if (is_mobile()) {
+    backBtn.classList.add("mobile");
+    cancleBtn.classList.add("mobile");
+    photoSection.classList.add("mobile");
+    alert("mobile");
+  } else {
+    backBtn.classList.remove("mobile");
+    cancleBtn.classList.remove("mobile");
+    photoSection.classList.remove("mobile");
+    alert("web");
   }
 }
 
