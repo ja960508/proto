@@ -108,12 +108,10 @@ function checkDevice() {
     backBtn.classList.add("mobile");
     cancleBtn.classList.add("mobile");
     photoSection.classList.add("mobile");
-    alert("mobile");
   } else {
     backBtn.classList.remove("mobile");
     cancleBtn.classList.remove("mobile");
     photoSection.classList.remove("mobile");
-    alert("web");
   }
 }
 
