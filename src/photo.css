@@ -89,6 +89,7 @@ input[type="checkbox"] {
   cursor: pointer;
   transform: scale(0.8);
   left: 0.5rem;
+  display: none;
 }
 
 .photo-section-cancle {
