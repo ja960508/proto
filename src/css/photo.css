@@ -352,6 +352,9 @@ input[type="checkbox"] {
 .photo-section-cancle.mobile {
   display: none;
 }
+.photo-toggle-section {
+  max-width: 100%;
+}
 
 /* image scale */
 
@@ -360,5 +363,5 @@ input[type="checkbox"] {
 }
 
 .photo-items.enlarge-2 {
-  height: 33%;
+  height: 35%;
 }
