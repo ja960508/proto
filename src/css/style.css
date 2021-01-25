@@ -1,0 +1,92 @@
+:root {
+  --toslide-blue: #4535f3;
+  --toslide-gray: #dadce0;
+  --toslide-normal-gray: #adafb3;
+  --toslide-background-gray: #f4f5f6;
+  --toslide-font-gray: #7c7d80;
+  --border-radius: 5px;
+  --border-gentle-radius: 12px;
+  --toslide-small-font-size: 12px;
+  --toslide-font-size: 12px;
+  --margin-small: 8px;
+  --margin-middle: 12px;
+  --padding-very-small: 4px;
+  --padding-small: 8px;
+  --padding-middle: 12px;
+}
+body {
+  font-family: Roboto !important;
+}
+
+button {
+  all: unset;
+}
+
+select {
+  all: unset;
+  background: url("../images/select_dropdown.svg") no-repeat 100%;
+  background-size: 2rem 2rem;
+}
+
+input[type="text"],
+input[type="email"] {
+  all: unset;
+  font-size: var(--toslide-font-size);
+  background-color: white;
+}
+
+.toslide-normal-gray {
+  background-color: var(--toslide-gray) !important;
+}
+
+.toslide-font-blue {
+  color: var(--toslide-blue);
+}
+
+.toslide-font-normal-gray {
+  color: var(--toslide-normal-gray);
+}
+
+.toslide-font-gray {
+  color: var(--toslide-font-gray);
+}
+
+/* font style */
+.toslide-font-small-normal {
+  font: normal normal 500 12px/14px Roboto;
+}
+.toslide-font-small-medium {
+  font: normal normal 600 12px/14px Roboto;
+}
+.toslide-font-small-bold {
+  font: normal normal 700 12px/14px Roboto;
+}
+.toslide-font-small-lineheight20-normal {
+  font: normal normal 500 12px/20px Roboto;
+}
+.toslide-font-small-lineheight20-medium {
+  font: normal normal 600 12px/20px Roboto;
+}
+
+.toslide-font-medium-normal {
+  font: normal normal 500 14px/16px Roboto;
+}
+.toslide-font-medium-medium {
+  font: normal normal 600 14px/16px Roboto;
+}
+.toslide-font-medium-bold {
+  font: normal normal 700 14px/16px Roboto;
+}
+.toslide-font-medium-lineheight20-medium {
+  font: normal normal 600 14px/20px Roboto;
+}
+
+.toslide-font-large-normal {
+  font: normal normal 500 16px/19px Roboto;
+}
+.toslide-font-large-medium {
+  font: normal normal 600 16px/19px Roboto;
+}
+.toslide-font-large-bold {
+  font: normal normal 700 16px/19px Roboto;
+}

@@ -3,74 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/style.css">
-    <link rel="stylesheet" href="./src/photo.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/photo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
-    <script src="./src/photo.js" defer></script>
+    <script src="./src/js/photo.js" defer></script>
+    <script src="./src/js/photo_set_box_size.js" defer></script>
+    <script src="./src/js/photo_modal.js" defer></script>
     <title>Document</title>
 </head>
 <body onresize="setPhotoLayoutHeight()">
-    <aside class="photo-toggle-section">
-        <div class="header-wrap">
-            <div class="header d-flex justify-content-center position-relative py-2 align-items-center">
-                <button class="position-absolute toslide-back-btn">
-                    <img src="./src/images/chevron-left.svg" alt="toslide-back-btn" class="util-image">
+    <aside class="photo-toggle-section position-relative">
+        <div class="wrap">
+            <div class="header-wrap">
+                <button class="select-function make-sample">
+                    <span class="function-text toslide-font-medium">샘플 추가</span>
                 </button>
-                <div class="title d-flex align-items-center">
-                    <img src="./src/images/photo_section/PNG_photo.png" alt="photo_icon" class="util-image">
-                    <span class="title-text toslide-font-bold ps-2">사진</span>
-                </div>
-                <button class="section-btn position-absolute photo-section-cancle">
-                    <img src="./src//images/photo_section/PNG_cancle_black.png" alt="cancle_btn" class="util-image">
-                </button>
-            </div>
-        </div>
-        <div class="btn-group-wrap">
-            <div class="toslide-btn-group mx-2 d-flex">
-                <input type="radio" class="radio-input js-student-check" name="toslide-radio-btn" id="btnradio1" autocomplete="off" data-mode="student">
-                <label class="col-6 text-center p-2 toslide-font-medium" for="btnradio1">키워드</label>
-                <input type="radio" class="radio-input js-non-student-check" name="toslide-radio-btn" id="btnradio2" autocomplete="off" data-mode="non-student">
-                <label class="col-6 text-center p-2 toslide-font-medium " for="btnradio2">사진</label>
-            </div>
-        </div>
-        <div class="option-wrap">
-            <div class="option-select d-flex justify-content-between align-items-center px-2 toslide-font-small-medium">
-                <select name="sort_option">
-                    <option value="default">최신 순 정렬</option>
-                    <option value="reverse">역순 정렬</option>
-                </select>
-                <div class="checkbox-section d-flex align-items-center">
-                    <label for="sound-check">소리 알림</label>
-                    <input type="checkbox" id="sound-check">
-                    <label for="anonymous-check">익명 표시</label>
-                    <input type="checkbox" id="anonymous-check">
-                </div>
-            </div>
-        </div>
-        <ul class="photo-layout d-flex flex-column">
-        </ul>
-        <div class="footer-wrap">
-            <div class="footer px-3">
-                <div class="d-flex justify-content-center py-2">
-                    <button class="select-function lecturer-image-send w-100 mb-1 d-flex align-items-center">
-                        <img src="./src/images/photo_section/photo_black.png" alt="send_image" class="util-image">
-                        <span class="function-text toslide-font-medium ps-2">강사 사진 보내기</span>
+                <div class="header d-flex justify-content-center position-relative py-2 align-items-center">
+                    <button class="position-absolute toslide-back-btn">
+                        <img src="./src/images/chevron-left.svg" alt="toslide-back-btn" class="util-image">
+                    </button>
+                    <div class="title d-flex align-items-center">
+                        <img src="./src/images/photo_section/PNG_photo.png" alt="photo_icon" class="util-image">
+                        <span class="title-text toslide-font-large-bold ps-2">사진</span>
+                    </div>
+                    <button class="section-btn position-absolute photo-section-cancle">
+                        <img src="./src//images/photo_section/PNG_cancle_black.png" alt="cancle_btn" class="util-image">
                     </button>
                 </div>
-                <div class="d-flex justify-content-around">
-                    <button class="select-function make-sample">
-                        <span class="function-text toslide-font-medium">샘플 추가</span>
+            </div>
+            <div class="btn-group-wrap">
+                <div class="toslide-btn-group mx-2 d-flex">
+                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio1" autocomplete="off" data-mode="student">
+                    <label class="col-6 text-center p-2 toslide-font-large-medium" for="btnradio1">사진</label>
+                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio2" autocomplete="off" data-mode="non-student">
+                    <label class="col-6 text-center p-2 toslide-font-large-medium " for="btnradio2">키워드</label>
+                </div>
+            </div>
+            <div class="option-wrap">
+                <div class="option-select d-flex justify-content-between align-items-center px-2 toslide-font-small-medium">
+                    <select name="sort_option" class="sort-option">
+                        <option value="default">최신 순 정렬</option>
+                        <option value="reverse">역순 정렬</option>
+                    </select>
+                    <div class="checkbox-section d-flex align-items-center">
+                        <div class="d-flex">                    
+                            <label for="sound-check" class="pe-1 sound-check">소리 알림</label>
+                            <input type="checkbox" id="sound-check">
+                        </div>
+                        <div class="d-flex">
+                            <label for="anonymous-check" class="pe-1 anonymous-check">익명 표시</label>
+                            <input type="checkbox" id="anonymous-check">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="photo-layout d-flex flex-column position-relative">
+                <!-- <li class="photo-items">
+                    <div class="photo-num toslide-font-small-normal">01</div>
+                    <div class="image-container">
+                        <div class="image-info">
+                            <div class="image-keyword toslide-font-small-medium">sample_keyword</div>
+                            <div class="image-sender toslide-font-small-normal">B511153 Leejooam</div>
+                        </div>
+                        <div class="image-section">
+                            <img src="./src/images/sample1.jpg" class="image-section-image">
+                            <div class="image-title toslide-font-small-lineheight20-normal">sample_image01.jpg</div>
+                        </div>
+    
+                    </div>
+                    <div class="btn-container">
+                        <button class="photo-delete-btn">
+                            <img src="./src/images/photo_section/PNG_cancle_gray.png" class="delete-btn-image">
+                        </button>
+                    </div>
+                </li>-->
+                <div class="magnifying-glass">
+                    <button class="reduction-btn" disabled>
+                        <img src="./src/images/photo_section/photo_size_control_minus-disabled.svg" alt="photo_size_control_minus" class="reductionImage">
                     </button>
-                    <button class="select-function lecturer-message-send">
-                        <img src="./src/images/photo_section/PNG_send_black.png" alt="send_image" class="util-image">
-                        <span class="function-text toslide-font-medium ps-2">개인 메세지 전송</span>
+                    <button class="enlargement-btn">
+                        <img src="./src/images/photo_section/photo_size_control_plus-enabled.svg" alt="photo_size_control_plus" class="enlargeImage">
                     </button>
-                    <button class="select-function delete-all-photo">
-                        <img src="./src/images/photo_section/PNG_delete_all_black.png" alt="delete_all" class="util-image">
-                        <span class="function-text toslide-font-medium ps-2">사진 모두 삭제</span>
-                    </button>
+                </div>
+            </ul>
+            <div class="footer-wrap">
+                <div class="footer px-3">
+                    <div class="d-flex justify-content-center py-2 w-100">
+                        <button class="select-function lecturer-image-send mb-1 d-flex align-items-center">
+                            <img src="./src/images/photo_section/photo_black.png" alt="send_image" class="util-image">
+                            <span class="function-text toslide-font-medium-medium ps-2">강사 사진 보내기</span>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-between w-100">
+    
+                        <button class="select-function lecturer-message-send">
+                            <img src="./src/images/photo_section/PNG_send_black.png" alt="send_image" class="util-image">
+                            <span class="function-text toslide-font-small-medium ps-2">개인 메세지 응답</span>
+                        </button>
+                        <button class="select-function delete-all-photo">
+                            <img src="./src/images/photo_section/PNG_delete_all_black.png" alt="delete_all" class="util-image">
+                            <span class="function-text toslide-font-small-medium ps-2">사진 모두 삭제</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal__wrap position-absolute d-none">
+            <div class="modal__photo-upload">
+                <div class="modal__header d-flex justify-content-center align-items-center">
+                    <img src="./src/images/photo_section/photo_black.png" alt="send_image" class="util-image">
+                    <span class="toslide-font-medium-bold ps-2">강사 사진 보내기</span>
+                </div>
+                <div class="modal__main-section px-2 d-flex flex-column align-items-center">
+                    <div class="photo-upload-section py-3">
+                        <div class="toslide-font-small-lineheight20-medium toslide-font-normal-gray">사진</div>
+                        <button class="select-photo d-flex flex-column justify-content-center align-items-center">
+                            <img src="./src/images/photo_section/photo_light_gray.png" alt="photo_light_gray" class="select-image-icon">
+                            <div class="toslide-font-medium-lineheight20-medium toslide-font-normal-gray">사진 업로드 하기</div>
+                        </button>
+                        <input type="file" class="d-none" id="image_upload" accept="img/*">
+                    </div>
+                    <div class="keyword-upload-section">
+                        <div class="toslide-font-small-lineheight20-medium toslide-font-normal-gray">키워드</div>
+                        <ul class="select-keyword">
+                            <li class="image-keyword toslide-font-small-medium">
+                                <span class="">sample </span>
+                                <button class="keyword-close-btn" onclick="closeKeyword(event)">
+                                    <img src="./src/images/photo_section/close_translucent_blue.png" alt="close_translucent_blue">
+                                </button>
+                            </li>
+                            <li class="image-keyword toslide-font-small-medium">
+                                <span class="">sample</span>
+                                <button class="keyword-close-btn" onclick="closeKeyword(event)">                                    
+                                    <img src="./src/images/photo_section/close_translucent_blue.png" alt="close_translucent_blue">
+                                </button>
+                            </li>
+                            <li class="image-keyword toslide-font-small-medium">
+                                <span class="">samplesamplesamplesamplesample</span>
+                                <button class="keyword-close-btn" onclick="closeKeyword(event)">                                    
+                                    <img src="./src/images/photo_section/close_translucent_blue.png" alt="close_translucent_blue">
+                                </button>
+                            </li>
+                            <li class="image-keyword toslide-font-small-medium">
+                                <span class="">sample</span>
+                                <button class="keyword-close-btn" onclick="closeKeyword(event)">                                    
+                                    <img src="./src/images/photo_section/close_translucent_blue.png" alt="close_translucent_blue">
+                                </button>
+                            </li>
+                            <li class="image-keyword toslide-font-small-medium">
+                                <span class="">sample</span>
+                                <button class="keyword-close-btn" onclick="closeKeyword(event)">                                    
+                                    <img src="./src/images/photo_section/close_translucent_blue.png" alt="close_translucent_blue">
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal__function-select d-flex">
+                    <button class="modal__photo-upload-cancle-select toslide-font-medium-label d-flex justify-content-center align-items-center">취소</button>
+                    <button class="modal__photo-upload-select toslide-font-medium-label toslide-font-blue d-flex justify-content-center align-items-center">사진 보내기</button>
                 </div>
             </div>
         </div>

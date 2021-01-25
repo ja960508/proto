@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/style.css">
-    <link rel="stylesheet" href="./src/index.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
-    <script src="./src/index.js" defer></script>
+    <script src="./src/js/index.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -20,34 +20,34 @@
     <main class="container-fluid d-flex flex-column p-0 align-items-md-center">
         <form action="" id="login_info" class="d-flex flex-column col-md-4">
             <div class="pb-4 d-flex flex-column mode-select p-3">
-                <span class="toslide-font-bold">청중으로 참여하기</span>
+                <span class="toslide-font-large-bold">청중으로 참여하기</span>
                 <div class="toslide-btn-group mt-3 d-flex">
                     <input type="radio" class="radio-input js-student-check" name="toslide-radio-btn" id="btnradio1" autocomplete="off" data-mode="student">
-                    <label class="col-6 text-center p-2 toslide-font-medium" for="btnradio1">학생</label>
+                    <label class="col-6 text-center p-2 toslide-font-large-medium" for="btnradio1">학생</label>
                     <input type="radio" class="radio-input js-non-student-check" name="toslide-radio-btn" id="btnradio2" autocomplete="off" data-mode="non-student">
-                    <label class="col-6 text-center p-2 toslide-font-medium " for="btnradio2">일반인</label>
+                    <label class="col-6 text-center p-2 toslide-font-large-medium " for="btnradio2">일반인</label>
                 </div>
             </div>
             <div class="d-flex flex-column p-3 input-section">
                 <div class="d-flex flex-column mb-4">
-                    <span class="toslide-font-bold mb-3">본인</span>
+                    <span class="toslide-font-large-bold mb-3">본인</span>
                     <div class="d-flex align-items-center mb-3">
-                        <label for="Gmail" class="col-2">Gmail</label>
-                        <input type="email" id="Gmail" name="Gmail" class="js-gmail ms-1 input-content" placeholder="본인의 Gmail을 입력해주세요.">
+                        <label for="Gmail" class="col-2 toslide-font-large-normal">Gmail</label>
+                        <input type="email" id="Gmail" name="Gmail" class="js-gmail ms-1 input-content toslide-font-medium-normal" placeholder="본인의 Gmail을 입력해주세요.">
                     </div>
                     <div class="d-flex align-items-center mb-3 js-std-num-section">
-                        <label for="student-num" class="col-2 toslide-font-normal">학번</label>
-                        <input type="text" id="student-num" name="student-num" class="js-student-num ms-1 input-content" placeholder="본인의 학번을 입력해주세요.">
+                        <label for="student-num" class="col-2 toslide-font-large-normal">학번</label>
+                        <input type="text" id="student-num" name="student-num" class="js-student-num ms-1 input-content toslide-font-medium-normal" placeholder="본인의 학번을 입력해주세요.">
                     </div>
                     <div class="d-flex align-items-center mb-3">
-                        <label for="name" class="col-2 toslide-font-normal">이름</label>
-                        <input type="text" id="name" name="name" class="ms-1 input-content" placeholder="본인의 이름을 입력해주세요.">
+                        <label for="name" class="col-2 toslide-font-large-normal">이름</label>
+                        <input type="text" id="name" name="name" class="ms-1 input-content toslide-font-medium-normal" placeholder="본인의 이름을 입력해주세요.">
                     </div>
                 </div>
-                <span class="toslide-font-bold mb-3">강사</span>
+                <span class="toslide-font-large-bold mb-3">강사</span>
                 <div class="d-flex align-items-center mb-3 position-relative">
-                    <label for="lecturer" class="col-2">Gmail</label>
-                    <select name="lecturer" id="lecturer" form="login_info" class="ms-1 input-content js-select-lecturer">
+                    <label for="lecturer" class="col-2 toslide-font-large-normal">Gmail</label>
+                    <select name="lecturer" id="lecturer" form="login_info" class="ms-1 input-content js-select-lecturer toslide-font-medium-normal">
                         <option value="default" class="d-none">강사의 Gmail을 입력해주세요</option>
                         <option value="self-input">직접 입력하기</option>
                         <option value="GPS-search">GPS로 주변 강사 찾기</option>
@@ -55,7 +55,7 @@
                     <input type="email" id="lecturer" name="lecturer" class="ms-1 input-content d-none self-input js-select-input" disabled>
                     <img src="./src/images/select_dropdown.svg" alt="dropdown" class="select-input-dropdown js-select-input-dropdown d-none">
                 </div>
-                <input type="submit" value="확인" class="submit-btn mt-4 fw-bold">
+                <input type="submit" value="확인" class="submit-btn mt-4 toslide-font-large-bold">
             </div>
         </form>
     </main>
