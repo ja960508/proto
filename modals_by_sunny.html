@@ -1,0 +1,35 @@
+<center>
+  <div class="modal fade " id="delete_all_photos" style="width: 100%;" tabindex="-1"  data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog  modal-sm" style="background-color: blueviolet;">
+        <div class="modal-content">
+          <div class="modal-body" id="delete_comment_content" style="padding: 0px;margin: 0px;">
+              <img class="img-fluid modal_img" style="width: 60px;" src="/revised/services/hwanghi/alert/alert_img/trashcan.png" >
+          </div>
+          <div class="modal-header d-flex justify-content-center" style="padding: 0px;margin: 0px;">
+              <label class="modal-title" id="exampleModalLabel" style="font-size: medium;" >사진을 모두 삭제하시겠습니까?</label>
+            </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="$('#delete_all_photos').modal('hide');">Cancel</button>
+            <button type="button" class="btn btn-primary" onclick="do_actual_deletion()">Delete</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</center>
+
+<div class="modal fade " id="delete_a_photo" style="width: 100%;" tabindex="-1"  data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-sm" style="background-color: blueviolet;">
+    <div class="modal-content">
+      <div class="modal-body d-flex justify-content-center" id="delete_comment_content" style="padding: 0px;margin: 0px;">
+          <img class="img-fluid modal_img" style="width: 60px;" src="/revised/services/hwanghi/alert/alert_img/x.png" >
+      </div>
+      <div class="modal-header d-flex justify-content-center" style="padding: 0px;margin: 0px;">
+          <label class="modal-title" id="exampleModalLabel" style="font-size: medium;" >해당 사진을 삭제하시겠습니까?</label>
+        </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="$('#delete_a_photo').modal('hide');">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="do_actual_delete_a_photo()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
