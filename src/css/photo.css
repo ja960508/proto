@@ -30,12 +30,12 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
 }
-.btn-group-wrap {
+/* .btn-group-wrap {
   width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
-}
+} */
 .option-wrap {
   width: 100%;
   height: 40px;
