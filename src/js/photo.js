@@ -2,6 +2,7 @@ const targetUl = document.querySelector(".photo-layout");
 const enlargeBtn = document.querySelector(".enlargement-btn");
 const reductionBtn = document.querySelector(".reduction-btn");
 const targetTbody = document.querySelector("#js-tbody");
+let focusTableRowIndex = -1;
 
 let magnifyingGlassController = 0;
 
@@ -126,6 +127,14 @@ function currentEnlargement() {
   }
 }
 
+function focusOnTableRow(event) {
+  if (focusTableRowIndex >= 0) {
+    targetTbody.childNodes[focusTableRowIndex + 1].classList.remove("focus");
+  }
+  focusTableRowIndex = event.currentTarget.rowIndex;
+  event.currentTarget.classList.add("focus");
+}
+
 function makeList() {
   const imageNumber =
     targetTbody.childElementCount / 10 >= 1
@@ -135,6 +144,7 @@ function makeList() {
   currentEnlargement().map((item) => {
     tr.classList.add(item);
   });
+  tr.onclick = focusOnTableRow;
   tr.innerHTML = `
     <td class="photo-num toslide-font-small-normal">${imageNumber}</td>
     <td class="image-container">
@@ -153,6 +163,7 @@ function makeList() {
         </button>
     </td>
     `;
+
   targetTbody.appendChild(tr);
 }
 
