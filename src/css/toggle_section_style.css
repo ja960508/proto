@@ -1,0 +1,139 @@
+@import "./style.css";
+html {
+  height: 100vh;
+}
+
+body {
+  background-color: var(--toslide-background-gray) !important;
+  height: 100% !important;
+  display: flex;
+  justify-content: flex-end;
+  /* carefully */
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.toggle-section {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  min-width: 360px;
+}
+
+/* wrap */
+.header-wrap {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+/* .btn-group-wrap {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+  } */
+.option-wrap {
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid var(--toslide-gray);
+  border-bottom: 1px solid var(--toslide-gray);
+  display: flex;
+  align-items: center;
+}
+.content-layout {
+  width: 100%;
+}
+.footer-wrap {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+
+/* header */
+.header {
+  width: 100%;
+}
+
+.toslide-back-btn {
+  cursor: pointer;
+  transform: scale(0.8);
+  left: 0.5rem;
+  display: none;
+}
+
+.section-cancle {
+  right: 0.5rem;
+}
+
+.toslide-btn-group {
+  background-color: var(--toslide-gray);
+  border-radius: var(--border-radius);
+  padding: var(--padding-very-small);
+  width: 100%;
+}
+
+.toslide-btn-group label {
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+.toslide-btn-group .radio-input {
+  display: none;
+}
+
+.toslide-btn-group .radio-input:checked + label {
+  background-color: white;
+  box-shadow: 0px 0.5px 3px #00000033;
+}
+
+/* option */
+.option-select {
+  width: 100%;
+}
+
+.sort-option {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--toslide-gray);
+  width: 35%;
+  background-color: white;
+  padding: var(--padding-very-small) var(--padding-small);
+}
+
+.checkbox-section > * {
+  margin-right: var(--margin-small);
+}
+
+/* content */
+.content-layout {
+  background-color: white;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+}
+
+/* footer */
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.util-image {
+  width: 24px;
+}
+
+/* mobile */
+.toslide-back-btn.mobile {
+  display: none;
+}
+.section-cancle.mobile {
+  display: block;
+}
+.toggle-section.mobile {
+  max-width: 100%;
+}

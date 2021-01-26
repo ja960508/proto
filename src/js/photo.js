@@ -128,11 +128,25 @@ function currentEnlargement() {
 }
 
 function focusOnTableRow(event) {
-  if (focusTableRowIndex >= 0) {
-    targetTbody.childNodes[focusTableRowIndex + 1].classList.remove("focus");
+  if (focusTableRowIndex >= 1) {
+    targetTbody.childNodes[focusTableRowIndex].classList.remove("focus");
   }
-  focusTableRowIndex = event.currentTarget.rowIndex;
+  focusTableRowIndex = event.currentTarget.rowIndex + 1;
   event.currentTarget.classList.add("focus");
+}
+
+function focusNextImage() {
+  if (focusTableRowIndex < 1) return;
+  targetTbody.childNodes[focusTableRowIndex].classList.remove("focus");
+  targetTbody.childNodes[focusTableRowIndex + 1].classList.add("focus");
+  focusTableRowIndex += 1;
+}
+
+function focusPrevImage() {
+  if (focusTableRowIndex < 0) return;
+  targetTbody.childNodes[focusTableRowIndex].classList.remove("focus");
+  targetTbody.childNodes[focusTableRowIndex - 1].classList.add("focus");
+  focusTableRowIndex -= 1;
 }
 
 function makeList() {

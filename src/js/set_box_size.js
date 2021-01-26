@@ -18,21 +18,21 @@ function is_mobile() {
   return false;
 }
 
-function setPhotoLayoutHeight() {
+function setLayoutHeight() {
   const body = document.querySelector("body");
   const header = document.querySelector(".header-wrap").offsetHeight;
   // const btnGruop = document.querySelector(".btn-group-wrap").offsetHeight;
   const option = document.querySelector(".option-wrap").offsetHeight;
   const footer = document.querySelector(".footer-wrap").offsetHeight;
-  const photoLayout = document.querySelector(".photo-layout");
+  const contentLayout = document.querySelector(".content-layout");
 
-  photoLayout.style.height =
+  contentLayout.style.height =
     body.offsetHeight - (header + option + footer) + "px";
 }
 
 function checkDevice() {
   const backBtn = document.querySelector(".toslide-back-btn");
-  const cancleBtn = document.querySelector(".photo-section-cancle");
+  const cancleBtn = document.querySelector(".section-cancle");
 
   console.log(is_mobile());
 
@@ -45,5 +45,5 @@ function checkDevice() {
   }
 }
 
-window.onload = setPhotoLayoutHeight();
+window.onload = setLayoutHeight();
 checkDevice();

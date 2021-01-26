@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/toggle_section_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
+    <script src="./src/js/set_box_size.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <aside class="toggle-section position-relative">
+        <div class="wrap">
+            <div class="header-wrap">
+                <div class="header d-flex justify-content-center position-relative py-2 align-items-center">
+                    <button class="position-absolute toslide-back-btn">
+                        <img src="./src/images/chevron-left.svg" alt="toslide-back-btn" class="util-image">
+                    </button>
+                    <div class="title d-flex align-items-center">
+                        <img src="./src/images/vote_section/vote_blue.png" alt="vote_icon" class="util-image">
+                        <span class="title-text toslide-font-large-bold ps-2">투표</span>
+                    </div>
+                    <button class="section-btn position-absolute section-cancle">
+                        <img src="./src//images/photo_section/PNG_cancle_black.png" alt="cancle_btn" class="util-image">
+                    </button>
+                </div>
+            </div>
+            <div class="btn-group-wrap">
+                <div class="toslide-btn-group mx-2 d-flex">
+                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio1" autocomplete="off" data-mode="student">
+                    <label class="col-6 text-center p-2 toslide-font-large-medium" for="btnradio1">메시지</label>
+                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio2" autocomplete="off" data-mode="non-student">
+                    <label class="col-6 text-center p-2 toslide-font-large-medium " for="btnradio2">사진</label>
+                </div>
+            </div>
+            <div class="option-wrap">
+                <div class="option-select d-flex justify-content-between align-items-center px-2 toslide-font-small-medium">
+                    <select name="sort_option" class="sort-option">
+                        <option value="default">최신순 정렬</option>
+                        <option value="reverse">득표순 정렬</option>
+                    </select>
+                    <div class="checkbox-section d-flex align-items-center">
+                        <div class="d-flex">                    
+                            <label for="sound-check" class="pe-1 sound-check">소리 알림</label>
+                            <input type="checkbox" id="sound-check">
+                        </div>
+                        <div class="d-flex">
+                            <label for="anonymous-check" class="pe-1 anonymous-check">중복 투표</label>
+                            <input type="checkbox" id="anonymous-check">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="content-layout d-flex flex-column position-relative">
+            </table>
+            <div class="footer-wrap d-none">
+            </div>
+        </div>
+    </aside>
+</body>
+</html>
