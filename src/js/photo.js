@@ -2,6 +2,9 @@ const targetUl = document.querySelector(".photo-layout");
 const enlargeBtn = document.querySelector(".enlargement-btn");
 const reductionBtn = document.querySelector(".reduction-btn");
 const targetTbody = document.querySelector("#js-tbody");
+const nextImageBtn = document.querySelector(".nextImage"),
+  prevImageBtn = document.querySelector(".prevImage"),
+  lecturerImageSendBtn = document.querySelector(".lecturer-image-send");
 let focusTableRowIndex = -1;
 
 let magnifyingGlassController = 0;
@@ -136,17 +139,30 @@ function focusOnTableRow(event) {
 }
 
 function focusNextImage() {
-  if (focusTableRowIndex < 1) return;
+  if (
+    focusTableRowIndex < 1 ||
+    focusTableRowIndex >= targetTbody.childNodes.length - 1
+  )
+    return;
   targetTbody.childNodes[focusTableRowIndex].classList.remove("focus");
   targetTbody.childNodes[focusTableRowIndex + 1].classList.add("focus");
   focusTableRowIndex += 1;
 }
 
 function focusPrevImage() {
-  if (focusTableRowIndex < 0) return;
+  if (focusTableRowIndex <= 1) return;
   targetTbody.childNodes[focusTableRowIndex].classList.remove("focus");
   targetTbody.childNodes[focusTableRowIndex - 1].classList.add("focus");
   focusTableRowIndex -= 1;
+}
+
+function photoMobileCheck() {
+  console.log("hello");
+  if (is_mobile()) {
+    prevImageBtn.classList.add("mobile");
+    nextImageBtn.classList.add("mobile");
+    lecturerImageSendBtn.classList.add("mobile");
+  }
 }
 
 function makeList() {
@@ -191,3 +207,4 @@ sampleBtn.addEventListener("click", makeList);
 
 enlargeBtn.addEventListener("click", enlargeImages);
 reductionBtn.addEventListener("click", reductionImages);
+photoMobileCheck();

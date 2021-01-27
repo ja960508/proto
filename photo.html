@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/photo.css">
     <link rel="stylesheet" href="./src/css/toggle_section_style.css">
+    <link rel="stylesheet" href="./src/css/photo.css">
     <!-- <link rel="stylesheet" href="./photo_by_sunny.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <script src="/revised/services/includeHtml_only.js"></script>
-    <script src="./src/js/photo.js" defer></script>
     <script src="./src/js/set_box_size.js" defer></script>
+    <script src="./src/js/photo.js" defer></script>
     <script src="./src/js/photo_modal.js" defer></script>
     <script src="./src/js/image_modal_section.js" defer></script>
     
@@ -39,14 +39,8 @@
                     </button>
                 </div>
             </div>
-            <!-- <div class="btn-group-wrap">
-                <div class="toslide-btn-group mx-2 d-flex">
-                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio1" autocomplete="off" data-mode="student">
-                    <label class="col-6 text-center p-2 toslide-font-large-medium" for="btnradio1">사진</label>
-                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio2" autocomplete="off" data-mode="non-student">
-                    <label class="col-6 text-center p-2 toslide-font-large-medium " for="btnradio2">키워드</label>
-                </div>
-            </div> -->
+            <div class="btn-group-wrap">
+            </div>
             <div class="option-wrap">
                 <div class="option-select d-flex justify-content-between align-items-center px-2 toslide-font-small-medium">
                     <select name="sort_option" class="sort-option">
@@ -66,32 +60,7 @@
                 </div>
             </div>
             <table class="content-layout d-flex flex-column position-relative">
-                <!-- 
-                    <tbody>
-                        <tr class="photo-items">
-                            <td class="photo-num toslide-font-small-normal">01</td>
-                            <td class="image-container">
-                                <div class="image-section">
-                                    <img src="./src/images/sample1.jpg" class="image-section-image">
-                                    <div class="image-title toslide-font-small-lineheight20-normal">sample_image01.jpg</div>
-                                </div>
-                            </td>
-                            <td class="btn-container">
-                                <button class="photo-delete-btn">
-                                    <img src="./src/images/photo_section/PNG_cancle_gray.png" class="delete-btn-image">
-                                </button>
-                            </td>
-                        </tr>
-                                                        <div class="image-info">
-                                    <div class="image-keyword toslide-font-small-medium">sample_keyword</div>
-                                    <div class="image-sender toslide-font-small-normal">B511153 Leejooam</div>
-                                </div>
-                    </tbody>
-                    -->
-
-
                     <tbody id="js-tbody">
-
                     </tbody>
                     <tfoot class="table-sticky-footer">
                         <tr class="magnifying-glass">
@@ -107,53 +76,27 @@
                             </td>
                         </tr>
                     </tfoot>
-
-                    
             </table>
-            <!-- <div id="messages_div"  class="photo-layout fixed_size_message_row messageRow d-flex flex-column" style="position:relative;">
-                <div class="imageSize fixed" style="background-color: white;">       
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16" onclick="resize_image(true)">
-                        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                    </svg>
-                    size
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16" onclick="resize_image(false)">
-                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-                    </svg>
-                </div>
-                <div class="inside-photo-layout">
-                    <table id="msg_table"  style="width: 100%;background-color:transparent;"></table>
-                </div>  
-            </div> -->
             <div class="footer-wrap">
                 <div class="footer px-3">
-                    <div class="select-function d-flex align-items-center justify-content-center w-100">
-                        <button class="prevImage" onclick="focusPrevImage()">
-                            <img src="./src/images/before_button.png" alt="prev_btn" class="util-image">
-                            <div class="toslide-font-medium-medium ps-2">이전</div>
+                    <div class="select-function d-flex align-items-center justify-content-around w-100">
+                        <button class="prevImage d-none py-2" onclick="focusPrevImage()">
+                            <img src="./src/images/photo_section/drop_down_black.png" alt="prev_btn" class="util-image">
+                            <div class="toslide-font-medium-medium">이전</div>
                         </button>
-                        <button class="lecturer-image-send">
+                        <button class="lecturer-image-send py-2 px-2">
                             <img src="./src/images/photo_section/photo_black.png" alt="send_image" class="util-image">
                             <div class="function-text toslide-font-medium-medium ps-2">강사 사진 보내기</div>
                         </button>
-                        <button class="nextImage" onclick="focusNextImage()">
-                            <div class="toslide-font-medium-medium ps-2">다음</div>
-                            <img src="./src/images/next_button.png" alt="prev_btn" class="util-image">
+                        <button class="nextImage d-none py-2" onclick="focusNextImage()">
+                            <div class="toslide-font-medium-medium">다음</div>
+                            <img src="./src/images/photo_section/drop_down_black.png" alt="prev_btn" class="util-image">
                         </button>
                     </div>
-                    <!-- <div class="d-flex justify-content-between w-100">
-                        <button class="select-function lecturer-message-send">
-                            <img src="./src/images/photo_section/PNG_send_black.png" alt="send_image" class="util-image">
-                            <span class="function-text toslide-font-small-medium ps-2">개인 메세지 응답</span>
-                        </button>
-                        <button class="select-function delete-all-photo">
-                            <img src="./src/images/photo_section/PNG_delete_all_black.png" alt="delete_all" class="util-image">
-                            <span class="function-text toslide-font-small-medium ps-2">사진 모두 삭제</span>
-                        </button>
-                    </div> -->
+
                 </div>
             </div>
         </div>
-
         <div class="modal__wrap position-absolute d-none">
             <div class="modal__photo-upload">
                 <div class="modal__header d-flex justify-content-center align-items-center">
@@ -181,6 +124,5 @@
         </div>
     </aside>
 <script src="./photo_by_sunny.js"></script>
-
 </body>
 </html>

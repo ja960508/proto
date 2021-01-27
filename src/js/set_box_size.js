@@ -21,13 +21,13 @@ function is_mobile() {
 function setLayoutHeight() {
   const body = document.querySelector("body");
   const header = document.querySelector(".header-wrap").offsetHeight;
-  // const btnGruop = document.querySelector(".btn-group-wrap").offsetHeight;
+  const btnGruop = document.querySelector(".btn-group-wrap").offsetHeight;
   const option = document.querySelector(".option-wrap").offsetHeight;
   const footer = document.querySelector(".footer-wrap").offsetHeight;
   const contentLayout = document.querySelector(".content-layout");
 
   contentLayout.style.height =
-    body.offsetHeight - (header + option + footer) + "px";
+    body.offsetHeight - (header + btnGruop + option + footer) + "px";
 }
 
 function checkDevice() {
