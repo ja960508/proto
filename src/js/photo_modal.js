@@ -1,4 +1,3 @@
-const lecturerImageSendBtn = document.querySelector(".lecturer-image-send");
 const modalPhotoUploadBtn = document.querySelector(
   ".modal__photo-upload-select"
 );
