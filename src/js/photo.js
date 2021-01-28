@@ -1,7 +1,7 @@
 const targetUl = document.querySelector(".photo-layout");
 const enlargeBtn = document.querySelector(".enlargement-btn");
 const reductionBtn = document.querySelector(".reduction-btn");
-const targetTbody = document.querySelector("#js-tbody");
+const targetTbody = document.querySelector("#js_tbody");
 const nextImageBtn = document.querySelector(".nextImage"),
   prevImageBtn = document.querySelector(".prevImage"),
   lecturerImageSendBtn = document.querySelector(".lecturer-image-send");
