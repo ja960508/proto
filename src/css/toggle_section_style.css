@@ -132,10 +132,10 @@ input[type="checkbox"] {
 
 /* mobile */
 .toslide-back-btn.mobile {
-  display: none;
+  display: block;
 }
 .section-cancle.mobile {
-  display: block;
+  display: none;
 }
 .toggle-section.mobile {
   max-width: 100%;
