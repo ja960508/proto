@@ -211,6 +211,12 @@
   width: 20%;
   height: auto;
 }
+
+.image-preview {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
 /* 
 .keyword-upload-section .select-keyword {
   width: 100%;
