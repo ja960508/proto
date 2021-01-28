@@ -1,11 +1,9 @@
 @import "./style.css";
-html {
-  height: 100vh;
-}
 
 body {
   background-color: var(--toslide-background-gray) !important;
-  height: 100% !important;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   justify-content: flex-end;
   /* carefully */
