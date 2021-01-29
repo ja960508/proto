@@ -18,7 +18,11 @@
 }
 
 .message-container {
-  width: 90%;
+  width: 80%;
+}
+
+.message-vote-container {
+  width: 10%;
 }
 
 .message-keyword {
@@ -38,25 +42,22 @@
   margin-right: var(--margin-small);
 }
 
-.message-sender {
-  color: #7c7d80;
+.message-vote {
+  color: #4535f3;
 }
 
-.select-function {
+.save-excel {
   border: 1px solid var(--toslide-gray);
-  background-color: #4535f3;
+  background-color: white;
   box-shadow: 0px 0px 8px #0000001a;
-  border-radius: 15px;
-  height: 70%;
+  border-radius: 5px;
   color: white;
 }
 
-.footer-option-btn {
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 0px 8px #0000001a;
-  border-radius: 5px;
-  width: 32%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.save-image {
+  width: 24px;
+}
+
+.function-text {
+  color: black;
 }
