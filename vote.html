@@ -10,6 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
     <script src="./src/js/set_box_size.js" defer></script>
+    <script src="./src//js/vote.js" defer></script>
     <title>Document</title>
 </head>
 <body onresize="setLayoutHeight()">
@@ -31,9 +32,9 @@
             </div>
             <div class="btn-group-wrap">
                 <div class="toslide-btn-group mx-2 d-flex">
-                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio1" autocomplete="off" data-mode="student">
+                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio1" autocomplete="off" data-mode="student" onclick="showMessage()">
                     <label class="col-6 text-center toslide-font-medium-medium p-1" for="btnradio1">메시지</label>
-                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio2" autocomplete="off" data-mode="non-student">
+                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio2" autocomplete="off" data-mode="non-student" onclick="showPicture()">
                     <label class="col-6 text-center toslide-font-medium-medium p-1" for="btnradio2">사진</label>
                 </div>
             </div>
@@ -56,7 +57,7 @@
                 </div>
             </div>
             <table class="content-layout d-flex flex-column position-relative">
-                <tbody id="js_tbody">
+                <tbody id="js_tbody" class="js_message_tbody">
                     <tr class="message-items py-1">
                         <td class="message-num toslide-font-small-normal">00</td>
                         <td class="message-container px-2">
@@ -109,6 +110,17 @@
                         </td>
                     </tr>
                 </tbody>
+                <tbody id="js_tbody" class="js_picture_tbody d-none">
+                    <tr class="photo-items">
+                        <td class="photo-num toslide-font-small-normal">00</td>
+                        <td class="image-container">
+                            <div class="image-section">
+                                <img src="./src/images/sample_photos/202011241641-B711142-이종찬.jpg" class="image-section-image">
+                                <div class="image-title toslide-font-small-lineheight20-normal">202011241641-B711142-이종찬.jpg</div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
             <div class="footer-wrap">
                 <div class="footer px-2 py-2">
@@ -125,3 +137,18 @@
 </body>
 </html>
 
+
+<!-- <tr class="photo-items">
+    <td class="photo-num toslide-font-small-normal">00</td>
+    <td class="image-container">
+        <div class="image-section">
+            <img src="./src/images/sample_photos/202011241641-B711142-이종찬.jpg" class="image-section-image">
+            <div class="image-title toslide-font-small-lineheight20-normal">202011241641-B711142-이종찬.jpg</div>
+        </div>
+    </td>
+    <td class="btn-container">
+        <button class="photo-delete-btn" onclick="deleteList(event)">
+            <img src="./src/images/photo_section/PNG_cancle_gray.png" class="delete-btn-image">
+        </button>
+    </td>
+</tr> -->
