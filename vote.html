@@ -32,7 +32,7 @@
             </div>
             <div class="btn-group-wrap">
                 <div class="toslide-btn-group mx-2 d-flex">
-                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio1" autocomplete="off" data-mode="student" onclick="showMessage()">
+                    <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio1" autocomplete="off" data-mode="student" onclick="showMessage()" checked>
                     <label class="col-6 text-center toslide-font-medium-medium p-1" for="btnradio1">메시지</label>
                     <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio2" autocomplete="off" data-mode="non-student" onclick="showPicture()">
                     <label class="col-6 text-center toslide-font-medium-medium p-1" for="btnradio2">사진</label>
@@ -111,6 +111,17 @@
                     </tr>
                 </tbody>
                 <tbody id="js_tbody" class="js_picture_tbody d-none">
+                    <tr class="photo-items">
+                        <td class="photo-num toslide-font-small-normal">00</td>
+                        <td class="image-container">
+                            <div class="image-section">
+                                <img src="./src/images/sample_photos/202011241641-B711142-이종찬.jpg" class="image-section-image">
+                            </div>
+                        </td>
+                        <td class="message-vote-container">
+                            <span class="message-vote toslide-font-small-normal">12표</span>
+                        </td>
+                    </tr>
                     <tr class="photo-items">
                         <td class="photo-num toslide-font-small-normal">00</td>
                         <td class="image-container">
