@@ -23,6 +23,8 @@
 
 .message-vote-container {
   width: 10%;
+  display: flex;
+  justify-content: center;
 }
 
 .message-keyword {
@@ -60,4 +62,49 @@
 
 .function-text {
   color: black;
+}
+
+/* photo */
+
+.photo-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: var(--padding-very-small) 0;
+  border-bottom: 1px solid var(--toslide-gray);
+  height: 169.75px;
+  cursor: pointer;
+  /* 30 33 */
+}
+
+.photo-items .image-container {
+  height: 100%;
+  width: 90%;
+}
+.photo-items .photo-num {
+  width: 10%;
+  height: auto;
+}
+
+.photo-items .photo-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--toslide-font-gray);
+}
+
+.photo-items .image-section {
+  width: 100%;
+  border: 1px solid var(--toslide-gray);
+  border-radius: var(--border-radius);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.image-section-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
