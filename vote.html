@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/toggle_section_style.css">
+    <link rel="stylesheet" href="./src/css/vote.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
     <script src="./src/js/set_box_size.js" defer></script>
     <title>Document</title>
 </head>
-<body>
+<body onresize="setLayoutHeight()">
     <aside class="toggle-section position-relative">
         <div class="wrap">
             <div class="header-wrap">
-                <div class="header d-flex justify-content-center position-relative py-2 align-items-center">
+                <div class="header d-flex justify-content-center position-relative py-3 align-items-center">
                     <button class="position-absolute toslide-back-btn">
                         <img src="./src/images/chevron-left.svg" alt="toslide-back-btn" class="function-image">
                     </button>
@@ -31,9 +32,9 @@
             <div class="btn-group-wrap">
                 <div class="toslide-btn-group mx-2 d-flex">
                     <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio1" autocomplete="off" data-mode="student">
-                    <label class="col-6 text-center toslide-font-large-medium" for="btnradio1">메시지</label>
+                    <label class="col-6 text-center toslide-font-medium-medium p-1" for="btnradio1">메시지</label>
                     <input type="radio" class="radio-input" name="toslide-radio-btn" id="btnradio2" autocomplete="off" data-mode="non-student">
-                    <label class="col-6 text-center toslide-font-large-medium " for="btnradio2">사진</label>
+                    <label class="col-6 text-center toslide-font-medium-medium p-1" for="btnradio2">사진</label>
                 </div>
             </div>
             <div class="option-wrap">
@@ -55,10 +56,82 @@
                 </div>
             </div>
             <table class="content-layout d-flex flex-column position-relative">
+                <tbody id="js_tbody">
+                    <tr class="message-items py-1">
+                        <td class="message-num toslide-font-small-normal">00</td>
+                        <td class="message-container px-2">
+                            <div class="message-info d-flex justify-content-between">
+                                <ul class="message-keyword">
+                                    <li class="message-keyword-items toslide-font-small-medium">Rendering</li>
+                                    <li class="message-keyword-items toslide-font-small-medium">Texture</li>
+                                </ul>
+                                <span class="message-sender toslide-font-small-normal">B511153 이주암</span>
+                            </div>
+
+                            <div class="message-content toslide-font-medium-lineheight20-normal">
+                                렌더링이 제일 재미있다
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="message-items py-1">
+                        <td class="message-num toslide-font-small-normal">00</td>
+                        <td class="message-container px-2">
+                            <div class="message-info d-flex justify-content-between">
+                                <ul class="message-keyword">
+                                    <li class="message-keyword-items toslide-font-small-medium">Rendering</li>
+                                    <li class="message-keyword-items toslide-font-small-medium">Texture</li>
+                                </ul>
+                                <span class="message-sender toslide-font-small-normal">B511153 이주암</span>
+                            </div>
+
+                            <div class="message-content toslide-font-medium-lineheight20-normal">
+                                렌더링이 제일 재미있다
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="message-items py-1">
+                        <td class="message-num toslide-font-small-normal">00</td>
+                        <td class="message-container px-2">
+                            <div class="message-info d-flex justify-content-between">
+                                <ul class="message-keyword">
+                                    <li class="message-keyword-items toslide-font-small-medium">Rendering</li>
+                                    <li class="message-keyword-items toslide-font-small-medium">Texture</li>
+                                </ul>
+                                <span class="message-sender toslide-font-small-normal">B511153 이주암</span>
+                            </div>
+
+                            <div class="message-content toslide-font-medium-lineheight20-normal">
+                                렌더링이 제일 재미있다
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
             <div class="footer-wrap">
+                <div class="footer px-3 py-2">
+                    <div class="select-function d-flex align-items-center justify-content-around w-100 h-100">
+                        <button class="py-2 px-2 w-100 d-flex justify-content-center">
+                            <div class="function-text toslide-font-medium-medium ps-2 responsive_font_1">투표 시작</div>
+                        </button>
+                    </div>
+                    <!-- <div class="d-flex justify-content-around w-100 h-50 p-1">
+                        <button class="footer-option-btn">
+                            <img src="" alt="">
+                            <span class="toslide-font-small-medium">항목 추가</span>
+                        </button>
+                        <button class="footer-option-btn">
+                            <img src="" alt="">
+                            <span class="toslide-font-small-medium">선택 항목 수정</span>
+                        </button>
+                        <button class="footer-option-btn">
+                            <img src="" alt="">
+                            <span class="toslide-font-small-medium">선택 항목 삭제</span>
+                        </button>
+                    </div> -->
+                </div>
             </div>
         </div>
     </aside>
 </body>
 </html>
+
