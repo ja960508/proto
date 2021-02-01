@@ -162,6 +162,12 @@ function photoMobileCheck() {
     prevImageBtn.classList.add("mobile");
     nextImageBtn.classList.add("mobile");
     lecturerImageSendBtn.classList.add("mobile");
+    
+    //document.getElementById("photo_table").style.height= (window.innerHeight -300)+"px";
+  }
+  else
+  {
+    document.getElementById("photo_footer").classList.remove("bottom_div1") ;
   }
 }
 

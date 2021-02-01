@@ -1,7 +1,21 @@
 
-//window.onload = function(){
-//  parent.show_modal_inside_alert_collections("del_all_photo_lecturer");
-//}
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var is_controller = false;
+function check_is_controller_for_photo()
+{
+  var status = getParameterByName("status");
+  if(status =="controller")
+  {
+    is_controller = true;
+    
+  } 
+}
 
 //const del_all_photos = nonStudent = document.querySelector('.delete-all-photo');
 var del_all_photos = document.querySelector('.delete-all-photo');
@@ -92,8 +106,29 @@ function get_message(src,img_id,cnt,has_keyword)
 
     
   }
-function  append_image(img_id) {
+var imgs_array  =[]; 
+var imgs_newly_arrived = [];
 
+function get_current_imgs_cnt()
+{
+  
+  return imgs_newly_arrived.length;
+} 
+
+function clear_newly_arrived_photos()
+{
+  imgs_newly_arrived = [];
+}
+function  append_image(img_id) {
+  parent.document.getElementById("loader").style.display = "block";
+  imgs_newly_arrived.push(img_id);
+  imgs_array.push(img_id);
+  sorting_by_property();
+  return;
+  var cur_object = parent.findObjectByKey_in_array(parent.all_photos_array, 'fid', img_id);
+
+  imgs_newly_arrived.push(img_id);
+  imgs_array.push(img_id);
   var src ="https://drive.google.com/uc?export=view&id="+img_id;
   const imageNumber =
     targetTbody.childElementCount / 10 >= 1
@@ -283,3 +318,82 @@ catch(err)
 
 //$('.imageSize').css({"bottom": 300 + "px"});
 
+var current_sorting_order = "default";
+
+function change_sorting(selectObject) {
+  var value = selectObject.value;  
+  //console.log(value);
+  if(current_sorting_order != value)
+  {
+    current_sorting_order = value;
+    sorting_by_property();
+  }
+
+  
+}
+function dynamicSort(property) {
+  var sortOrder = 1;
+  if(property[0] === "-") {
+      sortOrder = -1;
+      property = property.substr(1);
+  }
+  return function (a,b) {
+      /* next line works with strings and numbers, 
+      * and you may want to customize it to your needs
+      */
+      var result = result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+     
+      return result * sortOrder;
+  }
+}
+function sorting_by_property()
+{
+  
+  //console.log(parent.all_photos_array);
+  parent.all_photos_array =JSON.parse(JSON.stringify(parent.all_photos_array));
+  
+
+  if(current_sorting_order =="default")
+    parent.all_photos_array.sort(dynamicSort("-send_time"));
+  else if(current_sorting_order =="reverse")
+    parent.all_photos_array.sort(dynamicSort("send_time"));
+  else if(current_sorting_order =="id")
+    parent.all_photos_array.sort(dynamicSort("id"));    
+  
+
+  //console.log(parent.all_photos_array);
+  
+  $("#js_tbody tr").remove();
+  
+  for(var i=0; i< parent.all_photos_array.length; i++)
+  {
+   
+    var src ="https://drive.google.com/uc?export=view&id="+parent.all_photos_array[i].fid;
+    const imageNumber =
+      targetTbody.childElementCount / 10 >= 1
+        ? `${targetTbody.childElementCount}`
+        : `0${targetTbody.childElementCount}`;
+    const tr = document.createElement("tr");
+    currentEnlargement().map((item) => {
+      tr.classList.add(item);
+    });
+    tr.onclick = focusOnTableRow;
+    tr.innerHTML = `
+      <td class="photo-num toslide-font-small-normal">${imageNumber}</td>
+      <td class="image-container">
+          <div class="image-section">
+              <img onclick="parent.display_photo_to_photo_div('`+parent.all_photos_array[i].fid+`')" src="`+src+`" class="image-section-image">
+              <div class="image-title toslide-font-small-lineheight20-normal">`+parent.all_photos_array[i].id+`:`+parent.all_photos_array[i].name+`</div>
+          </div>
+      </td>
+      <td class="btn-container">
+          <button class="photo-delete-btn" onclick="delete_each_photo('`+parent.all_photos_array[i].fid+`')">
+              <img src="./src/images/photo_section/PNG_cancle_gray.png" class="delete-btn-image">
+          </button>
+      </td>
+      `;
+    
+      targetTbody.appendChild(tr);
+  }
+  parent.document.getElementById("loader").style.display = "none";
+}

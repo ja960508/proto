@@ -1,7 +1,7 @@
 const imageInput = document.querySelector("#image_upload");
 const imagePreview = document.querySelector(".image-preview");
 const defaultSection = document.querySelector(".image_upload-default-section");
-
+var ctx = canvas.getContext('2d');
 function previewImage(f) {
   let file = f.files;
   //사진 한번 불러들이고, 다시 화면 열고  취소하면 에러납니다
@@ -20,9 +20,27 @@ function previewImage(f) {
 
     // 파일 읽기가 완료되었을때 실행
     reader.onload = function (rst) {
-      // console.log(rst.target.result);
-      parent.data_picture = rst.target.result;
-      imagePreview.src = rst.target.result;
+      
+      //data_picture = rst.target.result;
+      //imagePreview.src = rst.target.result;
+
+      console.log(rst.target.result);
+		  parent.data_picture = rst.target.result;
+		  //document.getElementById('canvas').innerHTML = '<img class="preview_img "src="' + rst.target.result + '">';
+      var base_image = new Image();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      base_image.onload = () => {
+        ctx.drawImage(base_image, 0, 0, canvas.width, canvas.height);
+      }
+		  base_image.src = rst.target.result;
+		  
+		
+		//   canvas.width=document.getElementById('preview-box-js').offsetWidth;
+		//   canvas.height=document.getElementById('preview-box-js').offsetHeight;
+		
+		  
+
+
     };
 
     if (imagePreview.classList.contains("d-none")) {

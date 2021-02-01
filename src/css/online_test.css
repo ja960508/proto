@@ -1,0 +1,60 @@
+@import "./style.css";
+
+html,
+body {
+  height: 100%;
+}
+
+iframe {
+  margin: 0;
+  display: block;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+}
+
+.test-section {
+  width: 100%;
+}
+
+.attendance {
+  border: 1px solid var(--toslide-gray);
+}
+
+.test-title {
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--toslide-gray);
+  border-left: none;
+  position: relative;
+}
+
+.test-content {
+  height: 95%;
+  position: relative;
+}
+
+.function-image {
+  width: 34px;
+  height: 34px;
+}
+
+.test-cancle-btn {
+  position: absolute;
+  right: 5px;
+}
+
+.test-state {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  bottom: 120px;
+  right: 80px;
+}

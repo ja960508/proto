@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/menu.css">
+    <link rel="stylesheet" href="./src/css/menu_by_sunny.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/online_test.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <iframe id="iframe_main_menu" src="https://moonsangjin.github.io/Toslide/menu.html?a=1" style="width: 100%; height: 95px;" allowfullscreen=""></iframe>
+    <main class="main" style="height: calc(100% - 95px);">
+        <iframe id="iframe_attendance" src="https://prefer2.github.io/toslide_attendance/attendance.html" style="height: 100%;" allowfullscreen="" class="attendance"></iframe>
+        <div class="test-section" style="height: 100%;">
+            <div class="test-title">
+                <span class="toslide-font-small-medium">제 1회 투슬라이드 시험</span>
+                <button class="test-cancle-btn">
+                    <img src="./src/images/photo_section/close_gray.png" alt="cancle_btn" class="function-image">
+                </button>
+            </div>
+            <div class="test-content">
+                <iframe src="https://docs.google.com/document/d/1E_0U7w2f_kJO0SCSPeccJdNBc9wpZWeCowgOmWP_Amk/edit" frameborder="0" style="width:100%; height: 100%;"></iframe>
+                <div class="test-state">
+                    <img src="./src/images/menu/gathering_start.png" alt="gathering_start" class="function-image">
+                    <span>시험 중</span>
+                </div>
+                <div class="test-timer"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

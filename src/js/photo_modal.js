@@ -17,6 +17,7 @@ function closeSendImageModal() {
   const wrap = document.querySelector(".wrap");
   wrap.classList.toggle("modal-on");
   modal.classList.toggle("d-none");
+  parent.data_picture = "";
 
   if (defaultSection.classList.contains("d-none")) {
     defaultSection.classList.remove("d-none");
@@ -26,6 +27,10 @@ function closeSendImageModal() {
 }
 
 function uploadImage() {
+
+  parent.send_to_teacher_for_controller_v2();
+
+  return;
   const modal = document.querySelector(".modal__wrap");
   const wrap = document.querySelector(".wrap");
   const imageNumber =
