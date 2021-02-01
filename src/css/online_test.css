@@ -1,8 +1,12 @@
 @import "./style.css";
-
 html,
 body {
   height: 100%;
+}
+
+.div {
+  left: 100px;
+  top: 400px;
 }
 
 iframe {
