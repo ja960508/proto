@@ -48,13 +48,49 @@ iframe {
   right: 5px;
 }
 
-.test-state {
+.gathering-image {
+  width: 55px;
+  height: 55px;
+}
+
+.test-state,
+.test-timer {
+  width: 135px;
+  height: 85px;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: white;
-  bottom: 120px;
-  right: 80px;
+  right: 35px;
+  box-shadow: 0px 0px 8px #0000001a;
+  border: 1px solid var(--toslide-gray);
+  border-radius: 5px;
+}
+
+.test-state {
+  bottom: 125px;
+}
+
+.test-timer {
+  bottom: 35px;
+}
+
+.timer-section {
+  text-decoration: underline;
+  color: var(--toslide-font-gray);
+  height: 70%;
+}
+
+.timer-function-select {
+  height: 30%;
+  background-color: var(--toslide-background-gray);
+  border-radius: 0 0 5px 5px;
+  border-top: 1px solid var(--toslide-gray);
+}
+
+#timer_start {
+  border-left: 1px solid var(--toslide-gray);
+  color: var(--toslide-blue);
 }

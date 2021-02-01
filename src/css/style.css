@@ -90,3 +90,7 @@ input[type="email"] {
 .toslide-font-large-bold {
   font: normal normal 700 16px/19px Roboto;
 }
+
+.tosilde-font-very-large-medium {
+  font: normal normal 600 20px/24px Roboto;
+}
