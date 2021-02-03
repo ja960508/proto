@@ -19,6 +19,17 @@
 
 .message-container {
   width: 80%;
+  height: 100%;
+}
+
+.message-info {
+  height: 32px;
+}
+
+.message-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .message-vote-container {

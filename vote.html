@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./src/css/vote.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
     <script src="./src/js/set_box_size.js" defer></script>
     <!-- <script src="./src//js/vote.js" defer></script> -->
@@ -43,7 +44,7 @@
                 <div class="option-select d-flex justify-content-between align-items-center px-2 toslide-font-small-medium">
                     <select name="sort_option" class="sort-option" onchange="change_sorting(this)">
                         <option value="default">최신순 정렬</option>
-                        <option value="reverse">득표순 정렬</option>
+                        <option value="voting" selected>득표순 정렬</option>
                     </select>
                     <div class="checkbox-section d-flex align-items-center">
                         <div class="d-flex">                    
@@ -103,7 +104,30 @@
                                 </ul>
                             </div>
                             <div class="message-content toslide-font-medium-lineheight20-normal">
-                                렌더링이 제일 재미있다
+                                “늦지 않게 충분한 규모의 추가경정예산(추경)을 편성해 맞춤형 지원과 전 국민 지원을 함께 협의하겠다.”
+더불어민주당 이낙연 대표는 2일 국회 교섭단체 대표연설에서 신종 코로나바이러스 감염증(코로나19) 피해 계층에 대한 선별 지급 외에 경기 진작을 위한 전 국민 보편 지급도 함께 진행하겠다는 계획을 밝혔다. 문재인 대통령이 전날에 이어 이날도 소상공인과 자영업자들을 위한 지원 대책 마련을 강조한 가운데 이 대표도 4차 재난지원금 지급을 공식화하면서 정부의 논의에 속도가 붙을 것으로 보인다. 그러나 국가 재정 부담에 대한 우려도 만만치 않은 상황이다. 여기에 새해 초부터 추경 카드를 쓰는 것에 대한 부담도 있기 때문에 전 국민 재난지원금 지급을 위한 ‘슈퍼 추경’까지는 험난한 과정이 될 것으로 보인다.
+
+이 대표는 이날 ‘국민이 국가의 역할을 묻습니다, 코로나를 넘어 신복지국가로’라는 제목의 연설에서 “나라 곳간을 풀 때는 풀어야 다시 채울 수 있다”며 적극적인 재정 정책의 필요성을 강조했다. 그는 “(지난해) 우리는 59년 만에 한 해 네 차례 추경을 집행했다. 558조 원, 사상 최대의 올해 예산도 상반기에 72.4%를 집행할 계획이다. 그래도 부족하다”고 했다.
+                            </div>
+                        </td>
+                        <td class="message-vote-container">
+                            <span class="message-vote toslide-font-small-normal">12표</span>
+                        </td>
+                    </tr>
+                    <tr class="message-items py-1">
+                        <td class="message-num toslide-font-small-normal">00</td>
+                        <td class="message-container px-2">
+                            <div class="message-info d-flex justify-content-between">
+                                <ul class="message-keyword">
+                                    <li class="message-keyword-items toslide-font-small-medium">Rendering</li>
+                                    <li class="message-keyword-items toslide-font-small-medium">Texture</li>
+                                </ul>
+                            </div>
+                            <div class="message-content toslide-font-medium-lineheight20-normal">
+                                “늦지 않게 충분한 규모의 추가경정예산(추경)을 편성해 맞춤형 지원과 전 국민 지원을 함께 협의하겠다.”
+더불어민주당 이낙연 대표는 2일 국회 교섭단체 대표연설에서 신종 코로나바이러스 감염증(코로나19) 피해 계층에 대한 선별 지급 외에 경기 진작을 위한 전 국민 보편 지급도 함께 진행하겠다는 계획을 밝혔다. 문재인 대통령이 전날에 이어 이날도 소상공인과 자영업자들을 위한 지원 대책 마련을 강조한 가운데 이 대표도 4차 재난지원금 지급을 공식화하면서 정부의 논의에 속도가 붙을 것으로 보인다. 그러나 국가 재정 부담에 대한 우려도 만만치 않은 상황이다. 여기에 새해 초부터 추경 카드를 쓰는 것에 대한 부담도 있기 때문에 전 국민 재난지원금 지급을 위한 ‘슈퍼 추경’까지는 험난한 과정이 될 것으로 보인다.
+
+이 대표는 이날 ‘국민이 국가의 역할을 묻습니다, 코로나를 넘어 신복지국가로’라는 제목의 연설에서 “나라 곳간을 풀 때는 풀어야 다시 채울 수 있다”며 적극적인 재정 정책의 필요성을 강조했다. 그는 “(지난해) 우리는 59년 만에 한 해 네 차례 추경을 집행했다. 558조 원, 사상 최대의 올해 예산도 상반기에 72.4%를 집행할 계획이다. 그래도 부족하다”고 했다.
                             </div>
                         </td>
                         <td class="message-vote-container">

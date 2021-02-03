@@ -1,10 +1,11 @@
+const targetMsgTbody = document.querySelector("#msg_table_vote");
 function change_to(kind) {
   if (kind == "message") {
-    document.querySelector(".message_list").style.display = "block";
-    document.querySelector(".photo_list").style.display = "none";
+    document.getElementById("msg_table_vote").style.display = "block";
+    document.getElementById("photo_table").style.display = "none";
   } else {
-    document.querySelector(".message_list").style.display = "none";
-    document.querySelector(".photo_list").style.display = "block";
+    document.getElementById("msg_table_vote").style.display = "none";
+    document.getElementById("photo_table").style.display = "block";
   }
 }
 
@@ -153,7 +154,7 @@ function get_message(data, cnt) {
   return msg_template;
 }
 
-var current_sorting_order = "Time";
+var current_sorting_order = "voting";
 //var prev_sorting_order = "Time";
 function change_sorting(selectObject) {
   var value = selectObject.value;
@@ -180,6 +181,51 @@ function dynamicSort(property) {
   };
 }
 function sorting_by_property() {
+  voted_comments = JSON.parse(JSON.stringify(voted_comments));
+
+  //console.log(voted_comments);
+  // console.log("current_sorting_order",current_sorting_order);
+  if (current_sorting_order == "default")
+    voted_comments.sort(dynamicSort("-send_time"));
+  else if (current_sorting_order == "voting")
+    voted_comments.sort(dynamicSort("-like"));
+
+  $("#msg_table_vote tr").remove();
+  // console.log(voted_comments);
+  for (var i = 0; i < voted_comments.length; i++) {
+    const imageNumber =
+      targetMsgTbody.childElementCount / 10 >= 1
+        ? `${targetMsgTbody.childElementCount}`
+        : `0${targetMsgTbody.childElementCount}`;
+    const tr = document.createElement("tr");
+    tr.classList.add("message-items");
+    tr.classList.add("py-1");
+    //tr.onclick = focusOnTableRow;
+    tr.innerHTML =
+      `
+      <td class="message-num toslide-font-small-normal">${imageNumber}</td>
+      <td class="message-container px-2">
+          <div class="message-info d-flex justify-content-between">
+              <ul class="message-keyword">
+                  <li class="message-keyword-items toslide-font-small-medium"></li>
+                  <li class="message-keyword-items toslide-font-small-medium"></li>
+              </ul>
+          </div>
+          <div class="message-content toslide-font-medium-lineheight20-normal"  onclick="toAps_for_voting('` +
+      voted_comments[i].id +
+      `')" style="overflow:none;cursor:pointer">
+              ${voted_comments[i].pure_comment_whole}
+          </div>
+      </td>
+      <td class="message-vote-container">
+          <span class="message-vote toslide-font-small-normal">${voted_comments[i].like}</span>
+      </td>
+      `;
+    targetMsgTbody.appendChild(tr);
+  }
+  parent.document.getElementById("loader").style.display = "none";
+  return;
+
   voted_comments = JSON.parse(JSON.stringify(voted_comments));
 
   if (current_sorting_order == "default")
