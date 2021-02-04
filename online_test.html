@@ -10,12 +10,75 @@
     <link rel="stylesheet" href="./src/css/online_test.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
+    <script src="./src/js/online_test.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <iframe id="iframe_main_menu" src="https://moonsangjin.github.io/Toslide/menu.html?a=1" style="width: 100%; height: 95px;" allowfullscreen=""></iframe>
-    <main class="main" style="height: calc(100% - 95px);">
-        <div class="attendance position-relative">
+    <div class="wrap">
+        <iframe id="iframe_main_menu" src="https://moonsangjin.github.io/Toslide/menu.html?a=1" style="width: 100%; height: 95px;" allowfullscreen=""></iframe>
+        <main class="main position-relative" style="height: calc(100% - 95px);">
+            <button class="start-test position-absolute start-0 top-0 bg-info">시험 시작</button>
+            <div class="hide-section d-none">
+                <ul class="test-paper-upload-list d-flex">
+                    <li class="test-paper-upload-list-items d-flex flex-column align-items-center justify-content-around" id="uploadNewTestPaperFromPC" onclick="uploadFromPC()">
+                        <img src="./src/images/online_test/new_test_paper.gif" alt="new_test_paper">
+                        <span class="toslide-font-large-medium">새 시험지 업로드(PC)</span>
+                    </li>
+                    <li class="test-paper-upload-list-items d-flex flex-column align-items-center justify-content-around" id="uploadNewTestPaperFromGoogle">
+                        <img src="./src/images/online_test/google_document.png" alt="google_document">
+                        <span class="toslide-font-large-medium">새 시험지 업로드(구글)</span>
+                    </li>
+                    <li class="test-paper-upload-list-items d-flex flex-column align-items-center justify-content-around" id="loadTestPaper">
+                        <img src="./src/images/online_test/used_test_paper.gif" alt="used_test_paper">
+                        <span class="toslide-font-large-medium">시험지 불러오기</span>
+                    </li>
+                </ul>
+                <input type="file" class="d-none" id="test_paper_upload" name="test_paper_upload" accept=".doc, .docx" onchange="openTestSection(this)">
+            </div>
+            <div class="test-section-wrap d-none">
+                <div class="attendance position-relative">
+                    <iframe id="iframe_attendance" src="https://prefer2.github.io/toslide_attendance/attendance.html" style="height: 100%;" allowfullscreen=""></iframe>
+                </div>
+                <div class="test-section" style="height: 100%;">
+                    <div class="test-title">
+                        <span class="toslide-font-small-medium">제 1회 투슬라이드 시험</span>
+                        <button class="test-cancle-btn">
+                            <img src="./src/images/photo_section/close_gray.png" alt="cancle_btn" class="function-image">
+                        </button>
+                    </div>
+                    <div class="test-content">
+                        <iframe src="" frameborder="0" style="width:100%; height: 100%;" id="iframe_test_file"></iframe>
+                        <div class="test-state">
+                            <img src="./src/images/menu/gathering_start.png" alt="gathering_start" class="gathering-image">
+                            <span class="toslide-font-medium-medium">시험 중</span>
+                        </div>
+                        <div class="test-timer">
+                            <div class="timer-section tosilde-font-very-large-medium d-flex justify-content-center align-items-center">00:00:00</div>
+                            <div class="timer-function-select w-100 d-flex">
+                                <div class="d-flex justify-content-center align-items-center col-6 toslide-font-small-medium">초기화</div>
+                                <div class="d-flex justify-content-center align-items-center col-6 toslide-font-small-medium" id="timer_start">시작</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="mode-trans-modal position-absolute d-none">
+        <div class="mode-trans-modal-main d-flex flex-column justify-content-center align-items-center">
+            <img src="./src/images/online_test/test_mode_black.png" alt="test_mode_black">
+            <span class="toslide-font-medium-bold">시험모드로 전환하시겠습니까?</span>
+        </div>
+        <div class="mode-trans-modal-function-select d-flex">
+            <button class="mode-trans-modal-fuction-button cancle toslide-font-large-medium">취소</button>
+            <button class="mode-trans-modal-fuction-button trans toslide-font-large-medium">시험모드 전환</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+       <!-- <div class="attendance position-relative">
             <iframe id="iframe_attendance" src="https://prefer2.github.io/toslide_attendance/attendance.html" style="height: 100%;" allowfullscreen=""></iframe>
         </div>
         <div class="test-section" style="height: 100%;">
@@ -39,7 +102,4 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
-</body>
-</html>
+        </div> -->

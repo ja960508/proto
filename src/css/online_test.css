@@ -1,6 +1,7 @@
 @import "./style.css";
 html,
-body {
+body,
+.wrap {
   height: 100%;
 }
 
@@ -10,6 +11,14 @@ iframe {
 }
 
 .main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.test-section-wrap {
+  width: 100%;
   height: 100%;
   display: flex;
 }
@@ -92,4 +101,100 @@ iframe {
 #timer_start {
   border-left: 1px solid var(--toslide-gray);
   color: var(--toslide-blue);
+}
+
+/* hide-section */
+.hide-section {
+  width: 100%;
+  height: 100%;
+  background-color: var(--toslide-background-gray);
+  border-top: 1px solid var(--toslide-gray);
+}
+
+.test-paper-upload-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-paper-upload-list-items {
+  min-width: 190px;
+  min-height: 120px;
+  width: 10%;
+  height: 15%;
+  margin-right: var(--margin-large);
+  box-shadow: 0px 0px 8px #0000001a;
+  border-radius: var(--border-gentle-radius);
+  background-color: white;
+  cursor: pointer;
+}
+.test-paper-upload-list-items:hover {
+  transform: scale(1.05);
+  transition: transform 0.1s ease-in-out;
+}
+.test-paper-upload-list-items img {
+  width: 80px;
+  height: auto;
+}
+
+/* modal */
+.wrap.modal-on {
+  opacity: 0.4;
+}
+
+.mode-trans-modal {
+  min-width: 300px;
+  min-height: 200px;
+  width: 15%;
+  height: 25%;
+  border: 1px solid var(--toslide-gray);
+  border-radius: 13px;
+  box-shadow: 0px 0px 20px #00000027;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mode-trans-modal-main {
+  height: 75%;
+}
+
+.mode-trans-modal-main img {
+  width: 80px;
+  height: auto;
+}
+
+.mode-trans-modal-function-select {
+  height: 25%;
+}
+
+.mode-trans-modal-fuction-button {
+  width: 50%;
+  height: 100%;
+  background: var(--toslide-background-gray);
+  border: 1px solid var(--toslide-gray);
+  text-align: center;
+}
+
+.mode-trans-modal-fuction-button.cancle {
+  border-radius: 0px 0px 0px 13px;
+  color: var(--toslide-font-gray);
+}
+.mode-trans-modal-fuction-button.trans {
+  border-radius: 0px 0px 13px 0px;
+  color: var(--toslide-blue);
+}
+
+@media screen and (max-width: 768px) {
+  .test-paper-upload-list {
+    flex-direction: column;
+  }
+  .test-paper-upload-list-items {
+    margin-bottom: var(--margin-large);
+  }
 }
