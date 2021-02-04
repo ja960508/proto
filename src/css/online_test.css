@@ -4,11 +4,6 @@ body {
   height: 100%;
 }
 
-.div {
-  left: 100px;
-  top: 400px;
-}
-
 iframe {
   margin: 0;
   display: block;
