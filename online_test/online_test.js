@@ -95,9 +95,9 @@ function setTestNameCancle() {
 
 function cancleSetTestSessionModal() {
   const modal = document.querySelector(".set-test-session-modal");
-  const sessionNum = document.querySelector("#session_num");
-  const sessionName = document.querySelector("#session_name");
-  const testPaperAmount = document.querySelector("#test_paper_amount");
+  let sessionNum = document.querySelector("#session_num");
+  let sessionName = document.querySelector("#session_name");
+  let testPaperAmount = document.querySelector("#test_paper_amount");
 
   sessionNum = sessionName = testPaperAmount = "";
   modal.classList.add("d-none");
@@ -161,7 +161,7 @@ function cancleTestStartModal() {
   modalOff();
   modal.classList.add("d-none");
 }
-function cancleTestStartModal() {
+function cancleTestStopModal() {
   const modal = document.querySelector(".test-stop-modal");
   modalOff();
   modal.classList.add("d-none");
