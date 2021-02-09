@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="./modal.css">
     <link rel="stylesheet" href="./online_test.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
@@ -22,82 +23,257 @@
                         <img src="./online_test/new_test_paper.gif" alt="new_test_paper">
                         <span class="toslide-font-large-medium">새 시험지 업로드(PC)</span>
                     </li>
-                    <li class="test-paper-upload-list-items d-flex flex-column align-items-center justify-content-around" id="uploadNewTestPaperFromGoogle">
+                    <li class="test-paper-upload-list-items d-flex flex-column align-items-center justify-content-around" id="uploadNewTestPaperFromGoogle" onclick="uploadFromGoogleDrive()">
                         <img src="./online_test/google_document.png" alt="google_document">
                         <span class="toslide-font-large-medium">새 시험지 업로드(구글)</span>
                     </li>
-                    <li class="test-paper-upload-list-items d-flex flex-column align-items-center justify-content-around" id="loadTestPaper">
+                    <li class="test-paper-upload-list-items d-flex flex-column align-items-center justify-content-around" id="loadTestPaper" onclick="loadTestPaper()">
                         <img src="./online_test/used_test_paper.gif" alt="used_test_paper">
                         <span class="toslide-font-large-medium">시험지 불러오기</span>
                     </li>
                 </ul>
-                <input type="file" class="d-none" id="test_paper_upload" name="test_paper_upload" accept=".doc, .docx" onchange="openTestSection(this)">
+                <input type="file" class="d-none" id="test_paper_upload" name="test_paper_upload" accept=".doc, .docx" onchange="openTestEditSection(this)">
             </div>
             <div class="test-section-wrap d-none">
-                <div class="attendance position-relative">
+                <div class="attendance position-relative d-none">
                     <iframe id="iframe_attendance" src="https://prefer2.github.io/toslide_attendance/attendance.html" style="height: 100%;" allowfullscreen=""></iframe>
                 </div>
                 <div class="test-section" style="height: 100%;">
                     <div class="test-title">
-                        <span class="toslide-font-small-medium">제 1회 투슬라이드 시험</span>
-                        <button class="test-cancle-btn">
+                        <span class="toslide-font-small-medium" id="toslide_test_name">TEST NAME</span>
+                        <button class="test-cancle-btn" onclick="openCloseTestPaperModal()">
                             <img src="../src/images/photo_section/close_gray.png" alt="cancle_btn" class="function-image">
                         </button>
                     </div>
                     <div class="test-content">
                         <iframe src="" frameborder="0" style="width:100%; height: 100%;" id="iframe_test_file"></iframe>
-                        <div class="test-state">
-                            <img src="../src/images/menu/gathering_start.png" alt="gathering_start" class="gathering-image">
-                            <span class="toslide-font-medium-medium">시험 중</span>
+                        <div class="test-state-toggle" onclick="toggleTestMode()">
+                            <button class="test-state test-on d-none">
+                                <img src="../src/images/menu/gathering_start.png" alt="gathering_start" class="gathering-image">
+                                <span class="toslide-font-medium-medium">시험 중</span>
+                            </button>
+                            <button class="test-state test-off d-none">
+                                <img src="./online_test/not_collecting.png" alt="not_collecting" class="gathering-image">
+                                <span class="toslide-font-medium-medium">시험중지</span>
+                            </button>
                         </div>
-                        <div class="test-timer">
-                            <div class="timer-section tosilde-font-very-large-medium d-flex justify-content-center align-items-center">00:00:00</div>
+                        <div class="test-timer d-none">
+                            <div class="timer-section tosilde-font-very-large-medium d-flex justify-content-center align-items-center">
+                                <input type="number" min="0" max="23" class="hour-input" name="hour_input" id="hour_input" placeholder="00" onchange="checkTimerHourInputValue(this)">:
+                                <input type="number" min="0" max="59" class="minute-input" name="minute_input" id="minute_input" placeholder="00" onchange="checkTimerInputValue(this)">:
+                                <input type="number" min="0" max="59" class="second-input" name="second_input" id="second_input" placeholder="00" onchange="checkTimerInputValue(this)">
+                            </div>
                             <div class="timer-function-select w-100 d-flex">
-                                <div class="d-flex justify-content-center align-items-center col-6 toslide-font-small-medium">초기화</div>
-                                <div class="d-flex justify-content-center align-items-center col-6 toslide-font-small-medium" id="timer_start">시작</div>
+                                <button class="d-flex justify-content-center align-items-center col-6 toslide-font-small-medium" onclick="clearTimer()">초기화</button>
+                                <button class="d-flex justify-content-center align-items-center col-6 toslide-font-small-medium" id="timer_start" onclick="timerStart()">시작</button>
                             </div>
                         </div>
+                        <button class="test-check" onclick="openSetTestSessionModal()">
+                            <img src="./online_test/check_finished.png" alt="check_finished" class="check-image">
+                            <span class="toslide-font-medium-medium">검토 완료</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-    <div class="mode-trans-modal position-absolute d-none">
+    <div class="modal-overlay"></div>
+    <div class="toslide-modal mode-trans-modal d-none">
         <div class="mode-trans-modal-main d-flex flex-column justify-content-center align-items-center">
             <img src="./online_test/test_mode_black.png" alt="test_mode_black">
             <span class="toslide-font-medium-bold">시험모드로 전환하시겠습니까?</span>
         </div>
-        <div class="mode-trans-modal-function-select d-flex">
-            <button class="mode-trans-modal-fuction-button cancle toslide-font-large-medium">취소</button>
-            <button class="mode-trans-modal-fuction-button trans toslide-font-large-medium">시험모드 전환</button>
+        <div class="mode-trans-modal-function-select modal-function-section">
+            <button class="modal-cancle-btn" onclick="cancleTransModal()">취소</button>
+            <button class="modal-check-btn" onclick="transMode()">시험모드 전환</button>
+        </div>
+    </div>
+    <div class="toslide-modal load-paper-modal d-none">
+        <div class="load-paper-modal-header modal-title position-relative">
+            <span class="toslide-font-medium-bold">시험지 불러오기</span>
+            <button class="load-paper-modal-close-btn position-absolute" onclick="closeLoadPaperModal()">
+                <img src="./online_test/close_gray.png" alt="close_gray" class="function-image">
+            </button>
+        </div>
+        <table class="paper-list d-flex flex-column">
+            <thead class="paper-list-head">
+                <tr class="d-flex">
+                    <th>번호</th>
+                    <th>시험명</th>
+                    <th>매수</th>
+                    <th>업로드 시기</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+            <tbody class="paper-list-body">
+                <tr class="paper-list-items">
+                    <td>01</td>
+                    <td>제 6회 투슬라이드 시험</td>
+                    <td>1000</td>
+                    <td>2020년 1월 7일 13:45</td>
+                    <td>
+                        <button class="paper-list-close-btn">
+                            <img src="./online_test/close_gray.png" alt="close_gray" class="function-image">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="paper-list-items">
+                    <td>01</td>
+                    <td>제 6회 투슬라이드 시험</td>
+                    <td>1000</td>
+                    <td>2020년 1월 7일 13:45</td>
+                    <td>
+                        <button class="paper-list-close-btn">
+                            <img src="./online_test/close_gray.png" alt="close_gray" class="function-image">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="paper-list-items">
+                    <td>01</td>
+                    <td>제 6회 투슬라이드 시험</td>
+                    <td>1000</td>
+                    <td>2020년 1월 7일 13:45</td>
+                    <td>
+                        <button class="paper-list-close-btn">
+                            <img src="./online_test/close_gray.png" alt="close_gray" class="function-image">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="paper-list-items">
+                    <td>01</td>
+                    <td>제 6회 투슬라이드 시험</td>
+                    <td>1000</td>
+                    <td>2020년 1월 7일 13:45</td>
+                    <td>
+                        <button class="paper-list-close-btn">
+                            <img src="./online_test/close_gray.png" alt="close_gray" class="function-image">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="paper-list-items">
+                    <td>01</td>
+                    <td>제 6회 투슬라이드 시험</td>
+                    <td>1000</td>
+                    <td>2020년 1월 7일 13:45</td>
+                    <td>
+                        <button class="paper-list-close-btn">
+                            <img src="./online_test/close_gray.png" alt="close_gray" class="function-image">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="paper-list-items">
+                    <td>01</td>
+                    <td>제 6회 투슬라이드 시험</td>
+                    <td>1000</td>
+                    <td>2020년 1월 7일 13:45</td>
+                    <td>
+                        <button class="paper-list-close-btn">
+                            <img src="./online_test/close_gray.png" alt="close_gray" class="function-image">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="paper-list-items">
+                    <td>01</td>
+                    <td>제 6회 투슬라이드 시험</td>
+                    <td>1000</td>
+                    <td>2020년 1월 7일 13:45</td>
+                    <td>
+                        <button class="paper-list-close-btn">
+                            <img src="./online_test/close_gray.png" alt="close_gray" class="function-image">
+                        </button>
+                    </td>
+                </tr>
+                <tr class="paper-list-items">
+                    <td>01</td>
+                    <td>제 6회 투슬라이드 시험</td>
+                    <td>1000</td>
+                    <td>2020년 1월 7일 13:45</td>
+                    <td>
+                        <button class="paper-list-close-btn">
+                            <img src="./online_test/close_gray.png" alt="close_gray" class="function-image">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="toslide-modal set-test-name-modal d-none">
+        <div class="set-test-name-modal-header modal-title">
+            <span class="toslide-font-medium-bold">시험명 지정하기</span>
+        </div>
+        <div class="set-test-name-modal-input-section">
+            <div class="h-50 d-flex align-items-center w-100">
+                <label for="file_name" class="set-test-name-modal-label toslide-font-medium-normal">파일명</label>
+                <input type="text" name="file_name" id="file_name" class="set-test-name-modal-input" readonly>
+            </div>
+            <div class="h-50 d-flex align-items-center w-100">
+                <label for="test_name" class="set-test-name-modal-label toslide-font-medium-normal">시험명</label>
+                <input type="text" name="test_name" id="test_name" class="set-test-name-modal-input">
+            </div>
+        </div>
+        <div class="set-test-name-modal-function-select modal-function-section">
+            <button class="modal-cancle-btn" onclick="setTestNameCancle()">취소</button>
+            <button class="modal-check-btn" onclick="setTestName()">확인</button>
+        </div>
+    </div>
+    <div class="toslide-modal set-test-session-modal d-none">
+        <div class="set-test-session-header modal-title">
+            <span class="toslide-font-medium-bold">시험 세션 설정</span>
+        </div>
+        <div class="set-test-session-main">
+            <div class="set-test-session-main-content">
+                <span class="toslide-font-medium-medium">세션 개수</span>
+                <div class="my-4">
+                    <label for="session_num" class="toslide-font-medium-normal toslide-font-gray me-2">세션</label>
+                    <input type="number" id="session_num" name="session_num" class="session-number-input me-2">
+                    <span class="toslide-font-medium-normal toslide-font-gray">개</span>
+                </div>
+            </div>
+            <div class="set-test-session-main-content">
+                <span class="toslide-font-medium-medium">세션 이름 및 시험지 매수</span>
+                <div class="my-4">
+                    <label for="session_name" class="toslide-font-medium-normal toslide-font-gray me-2">세션1</label>
+                    <input type="text" id="session_name" name="session_name" class="session-text-input me-2">
+                    <input type="number" id="test_paper_amount" name="test_paper_amount" class="session-number-input me-2">
+                    <span class="toslide-font-medium-normal toslide-font-gray">매</span>
+                </div>
+            </div>
+            <span class="toslide-font-medium-normal toslide-font-gray">시험지 매수는 수험생 수 +5매를 권장합니다.</span>
+        </div>
+        <div class="set-test-session-function-select d-flex modal-function-section">
+            <button class="modal-cancle-btn" onclick="cancleSetTestSessionModal()">취소</button>
+            <button class="modal-check-btn" onclick="setTestSession()">확인</button>
+        </div>
+    </div>
+    <div class="toslide-modal test-start-modal d-none">
+        <div class="test-start-modal-main d-flex flex-column justify-content-center align-items-center">
+            <img src="./online_test/test_mode_black.png" alt="test_mode_black">
+            <span class="toslide-font-medium-bold">시험모드로 시작하시겠습니까?</span>
+        </div>
+        <div class="test-start-modal-function-select modal-function-section">
+            <button class="modal-cancle-btn" onclick="cancleTestStartModal()">취소</button>
+            <button class="modal-check-btn" onclick="testStart()">시험 시작</button>
+        </div>
+    </div>
+    <div class="toslide-modal test-stop-modal d-none">
+        <div class="test-stop-modal-main d-flex flex-column justify-content-center align-items-center">
+            <img src="./online_test/test_mode_black.png" alt="test_mode_black">
+            <span class="toslide-font-medium-bold">시험을 중단하시겠습니까?</span>
+        </div>
+        <div class="test-stop-modal-function-select modal-function-section">
+            <button class="modal-cancle-btn" onclick="cancleTestStopModal()">취소</button>
+            <button class="modal-check-btn" style="color: #EE3D36;" onclick="testStop()">시험 중단</button>
+        </div>
+    </div>
+    <div class="toslide-modal close-test-paper-modal d-none">
+        <div class="close-test-paper-modal-main d-flex flex-column justify-content-center align-items-center">
+            <img src="./online_test/X_or_Close_black.png" alt="X_or_Close_black">
+            <span class="toslide-font-medium-bold">업로드한 시험지 파일을 닫으시겠습니까?</span>
+        </div>
+        <div class="close-test-paper-modal-function-select modal-function-section">
+            <button class="modal-cancle-btn" onclick="cancleCloseTestPaperModal()">취소</button>
+            <button class="modal-check-btn" style="color: #EE3D36;" onclick="closeTestPaper()">시험지 파일 닫기</button>
         </div>
     </div>
 </body>
 </html>
-
-
-       <!-- <div class="attendance position-relative">
-            <iframe id="iframe_attendance" src="https://prefer2.github.io/toslide_attendance/attendance.html" style="height: 100%;" allowfullscreen=""></iframe>
-        </div>
-        <div class="test-section" style="height: 100%;">
-            <div class="test-title">
-                <span class="toslide-font-small-medium">제 1회 투슬라이드 시험</span>
-                <button class="test-cancle-btn">
-                    <img src="./src/images/photo_section/close_gray.png" alt="cancle_btn" class="function-image">
-                </button>
-            </div>
-            <div class="test-content">
-                <iframe src="https://docs.google.com/document/d/1E_0U7w2f_kJO0SCSPeccJdNBc9wpZWeCowgOmWP_Amk/edit" frameborder="0" style="width:100%; height: 100%;"></iframe>
-                <div class="test-state">
-                    <img src="./src/images/menu/gathering_start.png" alt="gathering_start" class="gathering-image">
-                    <span class="toslide-font-medium-medium">시험 중</span>
-                </div>
-                <div class="test-timer">
-                    <div class="timer-section tosilde-font-very-large-medium d-flex justify-content-center align-items-center">00:00:00</div>
-                    <div class="timer-function-select w-100 d-flex">
-                        <div class="d-flex justify-content-center align-items-center col-6 toslide-font-small-medium">초기화</div>
-                        <div class="d-flex justify-content-center align-items-center col-6 toslide-font-small-medium" id="timer_start">시작</div>
-                    </div>
-                </div>
-            </div>
-        </div> -->

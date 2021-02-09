@@ -46,7 +46,8 @@ iframe {
   position: relative;
 }
 
-.function-image {
+.function-image,
+.check-image {
   width: 34px;
   height: 34px;
 }
@@ -62,7 +63,8 @@ iframe {
 }
 
 .test-state,
-.test-timer {
+.test-timer,
+.test-check {
   width: 135px;
   height: 85px;
   position: absolute;
@@ -81,7 +83,8 @@ iframe {
   bottom: 125px;
 }
 
-.test-timer {
+.test-timer,
+.test-check {
   bottom: 35px;
 }
 
@@ -142,52 +145,178 @@ iframe {
   height: auto;
 }
 
-/* modal */
-.wrap.modal-on {
-  opacity: 0.4;
+.hour-input,
+.minute-input,
+.second-input {
+  all: unset;
+  width: 22px;
 }
 
-.mode-trans-modal {
+.hour-input::-webkit-outer-spin-button,
+.hour-input::-webkit-inner-spin-button,
+.minute-input::-webkit-outer-spin-button,
+.minute-input::-webkit-inner-spin-button,
+.second-input::-webkit-outer-spin-button,
+.second-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* custom modal */
+.mode-trans-modal,
+.test-start-modal,
+.test-stop-modal,
+.close-test-paper-modal {
   min-width: 300px;
   min-height: 200px;
   width: 15%;
   height: 25%;
-  border: 1px solid var(--toslide-gray);
-  border-radius: 13px;
-  box-shadow: 0px 0px 20px #00000027;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
-
-.mode-trans-modal-main {
+.mode-trans-modal-main,
+.test-start-modal-main,
+.test-stop-modal-main,
+.close-test-paper-modal-main {
   height: 75%;
 }
-
-.mode-trans-modal-main img {
+.mode-trans-modal-main img,
+.test-start-modal-main img,
+.test-stop-modal img,
+.close-test-paper-modal img {
   width: 80px;
   height: auto;
 }
-
-.mode-trans-modal-function-select {
+.mode-trans-modal-function-select,
+.test-start-modal-function-select,
+.test-stop-modal-function-select,
+.close-test-paper-modal-function-select {
   height: 25%;
 }
 
-.mode-trans-modal-fuction-button {
-  width: 50%;
-  height: 100%;
-  background: var(--toslide-background-gray);
-  border: 1px solid var(--toslide-gray);
+.load-paper-modal {
+  min-width: 500px;
+  min-height: 300px;
+  width: 30%;
+  height: 30%;
+  padding: 0 17px 17px 17px;
+}
+.load-paper-modal-header {
+  height: 20%;
+}
+.load-paper-modal-close-btn {
+  right: 12px;
+}
+.paper-list {
+  height: 80%;
+  width: 100%;
+  font: normal normal 500 12px/20px Roboto;
+  overflow-y: auto;
+}
+.paper-list tr th:nth-child(4),
+.paper-list tr td:nth-child(4) {
+  width: 30%;
+}
+.paper-list tr th:nth-child(2),
+.paper-list tr td:nth-child(2) {
+  width: 40%;
+}
+
+.paper-list-head {
+  width: 100%;
+  height: 10%;
+  background: #fafafb 0% 0% no-repeat padding-box;
+  border-bottom: 1px solid var(--toslide-gray);
+}
+
+.paper-list-head th {
+  border-right: 1px solid #d9dbdf;
+}
+
+.paper-list-body {
+  width: 100%;
+}
+
+.paper-list th,
+.paper-list td {
+  width: 10%;
   text-align: center;
 }
 
-.mode-trans-modal-fuction-button.cancle {
-  border-radius: 0px 0px 0px 13px;
+.paper-list-items {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid var(--toslide-gray);
+  align-items: center;
+}
+
+.set-test-name-modal {
+  min-width: 300px;
+  min-height: 200px;
+  width: 20%;
+  height: 25%;
+}
+.set-test-name-modal-header {
+  height: 25%;
+}
+.set-test-name-modal-input-section {
+  height: 50%;
+  padding: 0 17px;
+}
+
+.set-test-name-modal-input,
+.set-test-session-modal-input {
+  border: 1px solid var(--toslide-gray) !important;
+  border-radius: 5px !important;
+  width: 80% !important;
+  height: 15px !important;
+  padding: 9px 15px !important;
+}
+.set-test-name-modal-label {
+  width: 20%;
   color: var(--toslide-font-gray);
 }
-.mode-trans-modal-fuction-button.trans {
-  border-radius: 0px 0px 13px 0px;
-  color: var(--toslide-blue);
+
+.set-test-name-modal-function-select {
+  height: 25%;
+}
+
+.set-test-session-modal {
+  min-width: 400px;
+  min-height: 350px;
+  width: 25%;
+  height: 40%;
+}
+
+.set-test-session-header {
+  height: 20%;
+}
+.set-test-session-main {
+  height: 65%;
+  padding: 0 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.set-test-session-function-select {
+  height: 15%;
+}
+
+.set-test-session-main-content {
+  width: 100%;
+}
+.session-number-input {
+  width: 60px !important;
+  height: 30px !important;
+}
+.session-text-input {
+  width: 200px !important;
+  height: 30px !important;
+}
+
+.session-number-input,
+.session-text-input {
+  border: 1px solid var(--toslide-gray) !important;
+  border-radius: 5px !important;
 }
 
 @media screen and (max-width: 768px) {
