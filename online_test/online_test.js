@@ -245,11 +245,11 @@ function timerStart() {
     if (secondInputValue < 0) {
       minuteInputValue--;
       if (minuteInputValue >= 0) {
-        secondInputValue = `59`;
+        secondInputValue = `60`;
       } else {
         hourInputValue--;
         if (hourInputValue >= 0) {
-          minuteInputValue = `59`;
+          minuteInputValue = `60`;
           secondInputValue = `00`;
         } else {
           hourInputValue = `00`;
