@@ -234,9 +234,9 @@ function timerStart() {
   minuteInput.value = minuteInput.value || `00`;
   secondInput.value = secondInput.value || `00`;
 
-  let hourInputValue = hourInput.value;
-  let minuteInputValue = minuteInput.value;
-  let secondInputValue = secondInput.value;
+  let hourInputValue = String(hourInput.value);
+  let minuteInputValue = String(minuteInput.value);
+  let secondInputValue = String(secondInput.value);
 
   interval = setInterval(() => {
     console.log("tick");
@@ -259,6 +259,8 @@ function timerStart() {
       }
     }
 
+    console.log(hourInputValue.length);
+    console.log(hourInputValue);
     secondInputValue =
       secondInputValue.length < 2
         ? `0${secondInputValue}`
@@ -269,7 +271,6 @@ function timerStart() {
         : `${minuteInputValue}`;
     hourInputValue =
       hourInputValue.length < 2 ? `0${hourInputValue}` : `${hourInputValue}`;
-    console.log(hourInputValue);
 
     secondInput.value = secondInputValue;
     minuteInput.value = minuteInputValue;
