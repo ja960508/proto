@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="./toslide_main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous" defer></script>
+    <script src="./toslide_main.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <img src="./images/toslide_logo.png" alt="logo" class="logo">
+            <div class="translate-buttons">
+                <button class="translate translate__korean toslide-font-medium-normal active" onclick="textTranslate(this)">한국어</button>
+                <button class="translate translate__english toslide-font-medium-normal" onclick="textTranslate(this)">English</button>
+            </div>
+        </header>
+        <section class="join-section position-relative">
+            <div class="join-buttons">
+                <button class="join join__lecturer toslide-font-large-bold" onclick="loginToslide()">강사로 참여하기</button>
+                <button class="join join__audience toslide-font-large-bold" onclick="loginToslide()">학생으로 참여하기</button>
+            </div>
+        </section>
+        <section class="tutorial-section">
+            <div class="tutorial-section__header">
+                <ul class="tutorial-section__mode">
+                    <li class="tutorial-section__mode__items selected" onclick="tutorialModeSelect(this)">투슬라이드 소개</li>
+                    <li class="tutorial-section__mode__items" onclick="tutorialModeSelect(this)">메시지 및 사진으로 질의응답</li>
+                    <li class="tutorial-section__mode__items" onclick="tutorialModeSelect(this)">부정행위 방지하는 온라인 시험</li>
+                    <li class="tutorial-section__mode__items" onclick="tutorialModeSelect(this)">파일을 공유하는 온라인 강의</li>
+                </ul>
+            </div>
+            <div class="tutorial-section__content">
+
+            </div>
+        </section>
+        <footer class="footer">
+            <img src="./images/toslide_logo.png" alt="logo" class="logo">
+            <p class="footer-text copyright-text toslide-font-large-normal">Copyright © SunnyGraphy, Inc. Seoul, Korea</p>
+            <p class="footer-text emali-text toslide-font-large-normal">leeh@hongik.ac.kr</p>
+            <a href="#" class="footer-text privacy-anchor toslide-font-large-normal">Privacy Policy</a>
+        </footer>
+    </div>
+</body>
+</html>
