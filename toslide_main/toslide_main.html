@@ -22,14 +22,15 @@
             </div>
         </header>
         <section class="join-section position-relative">
-            <div class="join-buttons">
-                <button class="join join__lecturer toslide-font-large-bold" onclick="loginToslide()">강사로 참여하기</button>
-                <button class="join join__audience toslide-font-large-bold" onclick="loginToslide()">학생으로 참여하기</button>
+            <img src="" alt="join-section-background-img" id="bg_img" class="join-section-background-img">
+            <div class="join-buttons" id="toslide_join_button_container">
+                <button id="lbutton"  class="join join__lecturer" disabled onclick="loginToslide_lecturer()"><label class="toslide-font-large-bold">강사 참여</label></button>
+                <button id="sbutton" class="join join__audience" disabled onclick="loginToslide_student()"><label class="toslide-font-large-bold">학생 참여</label></button>
             </div>
         </section>
         <section class="tutorial-section">
             <div class="tutorial-section__header">
-                <ul class="tutorial-section__mode">
+                <ul class="tutorial-section__mode"> 
                     <li class="tutorial-section__mode__items selected" onclick="tutorialModeSelect(this)">투슬라이드 소개</li>
                     <li class="tutorial-section__mode__items" onclick="tutorialModeSelect(this)">메시지 및 사진으로 질의응답</li>
                     <li class="tutorial-section__mode__items" onclick="tutorialModeSelect(this)">부정행위 방지하는 온라인 시험</li>

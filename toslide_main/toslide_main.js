@@ -26,3 +26,34 @@ function tutorialModeSelect(target) {
 function loginToslide() {
   alert("login try");
 }
+
+
+function is_mobile() {
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    return true;
+  }
+
+  if (typeof window.orientation !== "undefined") {
+    return true;
+  }
+
+  let iOSios =
+    !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+  if (iOSios) return true;
+
+  return false;
+}
+
+window.onload = function(){
+  if(parent.is_mobile())
+  {
+      document.getElementById("bg_img").src = "./images/homepage_m_bg.png";
+  }
+  else{
+      document.getElementById("bg_img").src = "./images/homepage_pc_bg.png";
+  }  
+}
