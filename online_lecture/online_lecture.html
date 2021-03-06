@@ -42,6 +42,10 @@
                     </div>
                 </div>
                 <div class="lecture-book-controller d-flex flex-column align-items-center position-absolute">
+                    <button class="lecture-start-contoller" onclick="lectureStartToggle(this)">
+                        <img src="./images/not_collecting.png" alt="not_collecting" class="lecture-start-img">
+                        <span class="lecture-start-text toslide-font-medium-medium">강의중지</span>
+                    </button>
                     <div class="lecture-book-mode-select d-flex flex-column">
                         <button class="toslide-font-medium-medium h-50 text-center edit-mode clicked" onclick="lectureBookModeTrans(this)">편집모드</button>
                         <button class="toslide-font-medium-medium h-50 text-center look-mode" onclick="lectureBookModeTrans(this)">보기모드</button>
