@@ -3,6 +3,36 @@ const tutorialSectionModeItems = document.querySelectorAll(
 );
 const selectLecturer = document.querySelector("#select_lecturer");
 const selectStudent = document.querySelector("#select_student");
+/* 동영상 링크 정보 관리 */
+const QA_LECTURER = [
+  ['질의응답모드 둘러보기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['메시지', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['사진', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['투표', "https://www.youtube.com/embed/ruIciRNDrDA"],
+];
+const QA_STUDENT = [
+  ['메시지 보내기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['사진 보내기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['투표하기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+];
+const LEC_LECTURER = [
+  ['질의응답모드 둘러보기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['메시지', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['사진', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['투표', "https://www.youtube.com/embed/ruIciRNDrDA"],
+];
+const LEC_STUDENT = [
+  ['메시지 보내기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['사진 보내기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['투표하기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+];
+const TEST_LECTURER = [
+  ['시험모드 둘러보기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['시험모드 활용하기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+];
+const TEST_STUDENT = [
+  ['시험모드 활용하기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+];
 
 function textTranslate(target) {
   const korean = document.querySelector(".translate__korean");
@@ -41,7 +71,25 @@ function selectTutorialContent(target) {
   target.classList.add("selected");
   getTutorialImageContent(selectedContent, target);
 }
-
+/* Add for videos */
+function addVideoBox( videoList ) {
+  for( videoInfo of videoList ) {
+    if (videoInfo === undefined)
+      continue;
+    const div = document.createElement('div');
+    div.className = 'video-box';
+    div.innerHTML = `
+      <figcaption>`+videoInfo[0]+`</figcaption>
+      <iframe src="`+videoInfo[1]+`"frameborder="0" allowfullscreen class="video">
+      </iframe>
+    `;
+    document.getElementById('tutorial-videos').appendChild(div);
+  }
+}
+function removeRow() {
+  const videos = document.getElementById('tutorial-videos');
+  videos.innerHTML = '';
+}
 function getTutorialImageContent(
   target,
   selectedJoiner = selectLecturer.classList.contains("selected")
@@ -50,7 +98,7 @@ function getTutorialImageContent(
 ) {
   const imgContent = document.querySelector("#tutorial_img_content");
   const joinerMode = document.querySelector(".joiner-mode");
-
+  removeRow();
   switch (target.textContent) {
     case tutorialSectionModeItems[0].innerText:
       imgContent.src = "./images/tutorial_toslide_intro.png";
@@ -58,30 +106,47 @@ function getTutorialImageContent(
         joinerMode.classList.add("d-none");
       break;
     case tutorialSectionModeItems[1].innerText:
+      // 탭 공통 영역 
+      imgContent.src = "./images/qa_benefit.png";
+      // 탭 개별 영역
       if (selectedJoiner === selectLecturer) {
-        imgContent.src = "./images/tutorial_QnA_lecturer.png";
+        addVideoBox(QA_LECTURER);
+        // Additional image
+        const div = document.createElement('div');
+        div.className = 'video-box';
+        div.innerHTML = `
+        <figcaption>질의응답 모바일 컨트롤</figcaption>
+        <img src="./images/qa_control.png" class="video" height="100%" />
+        `;
+        document.getElementById('tutorial-videos').appendChild(div);
       } else {
-        imgContent.src = "./images/tutorial_QnA_student.png";
+        addVideoBox(QA_STUDENT);
       }
 
       joinerMode.classList.contains("d-none") &&
         joinerMode.classList.remove("d-none");
       break;
     case tutorialSectionModeItems[2].innerText:
+      // 탭 공통 영역 
+      imgContent.src = "./images/lecture_benefit.png";
+      // 탭 개별 영역
       if (selectedJoiner === selectLecturer) {
-        imgContent.src = "./images/tutorial_online_lecture_lecturer.png";
+        addVideoBox(LEC_LECTURER);
       } else {
-        imgContent.src = "./images/tutorial_online_lecture_student.png";
+        addVideoBox(LEC_STUDENT);
       }
 
       joinerMode.classList.contains("d-none") &&
         joinerMode.classList.remove("d-none");
       break;
     case tutorialSectionModeItems[3].innerText:
+      // 탭 공통 영역 
+      imgContent.src = "./images/test_benefit.png";
+      // 탭 개별 영역
       if (selectedJoiner === selectLecturer) {
-        imgContent.src = "./images/tutorial_online_test_lecturer.png";
+        addVideoBox(TEST_LECTURER);
       } else {
-        imgContent.src = "./images/tutorial_online_test_student.png";
+        addVideoBox(TEST_STUDENT);
       }
 
       joinerMode.classList.contains("d-none") &&
