@@ -93,11 +93,11 @@ input[type="email"] {
 }
 
 .toslide-font-very-large-bold {
-  font: normal normal 700 1.05vw/24px Roboto;
+  font: normal normal 700 1vw Roboto;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 1000px) {
   .toslide-font-very-large-bold {
-    font: normal normal 700 3.15vw/24px Roboto;
+    font: normal normal 700 14px Roboto;
   }
 }
