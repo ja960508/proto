@@ -101,13 +101,13 @@ function getTutorialImageContent(
   removeRow();
   switch (target.textContent) {
     case tutorialSectionModeItems[0].innerText:
-      imgContent.src = "./images/tutorial_toslide_intro.png";
+      imgContent.src = "./images/tutorial_toslide_intro.jpg";
       !joinerMode.classList.contains("d-none") &&
         joinerMode.classList.add("d-none");
       break;
     case tutorialSectionModeItems[1].innerText:
       // 탭 공통 영역 
-      imgContent.src = "./images/qa_benefit.png";
+      imgContent.src = "./images/qa_benefit.jpg";
       // 탭 개별 영역
       if (selectedJoiner === selectLecturer) {
         addVideoBox(QA_LECTURER);
@@ -116,7 +116,7 @@ function getTutorialImageContent(
         div.className = 'video-box';
         div.innerHTML = `
         <figcaption>질의응답 모바일 컨트롤</figcaption>
-        <img src="./images/qa_control.png" class="video" height="100%" />
+        <img src="./images/qa_control.jpg" class="video" height="100%" />
         `;
         document.getElementById('tutorial-videos').appendChild(div);
       } else {
@@ -128,7 +128,7 @@ function getTutorialImageContent(
       break;
     case tutorialSectionModeItems[2].innerText:
       // 탭 공통 영역 
-      imgContent.src = "./images/lecture_benefit.png";
+      imgContent.src = "./images/lecture_benefit.jpg";
       // 탭 개별 영역
       if (selectedJoiner === selectLecturer) {
         addVideoBox(LEC_LECTURER);
@@ -141,7 +141,7 @@ function getTutorialImageContent(
       break;
     case tutorialSectionModeItems[3].innerText:
       // 탭 공통 영역 
-      imgContent.src = "./images/test_benefit.png";
+      imgContent.src = "./images/test_benefit.jpg";
       // 탭 개별 영역
       if (selectedJoiner === selectLecturer) {
         addVideoBox(TEST_LECTURER);
@@ -187,8 +187,8 @@ function is_mobile() {
 
 window.onload = function () {
   if (parent.is_mobile()) {
-    document.getElementById("bg_img").src = "./images/homepage_m_bg.png";
+    document.getElementById("bg_img").src = "./images/homepage_m_bg.jpg";
   } else {
-    document.getElementById("bg_img").src = "./images/homepage_pc_bg.png";
+    document.getElementById("bg_img").src = "./images/homepage_pc_bg.jpg";
   }
 };
