@@ -16,15 +16,11 @@ const QA_STUDENT = [
   ['투표하기', "https://www.youtube.com/embed/ruIciRNDrDA"],
 ];
 const LEC_LECTURER = [
-  ['질의응답모드 둘러보기', "https://www.youtube.com/embed/ruIciRNDrDA"],
-  ['메시지', "https://www.youtube.com/embed/ruIciRNDrDA"],
-  ['사진', "https://www.youtube.com/embed/ruIciRNDrDA"],
-  ['투표', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['강의모드 둘러보기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['강의모드 활용하기', "https://www.youtube.com/embed/ruIciRNDrDA"],
 ];
 const LEC_STUDENT = [
-  ['메시지 보내기', "https://www.youtube.com/embed/ruIciRNDrDA"],
-  ['사진 보내기', "https://www.youtube.com/embed/ruIciRNDrDA"],
-  ['투표하기', "https://www.youtube.com/embed/ruIciRNDrDA"],
+  ['강의모드 활용하기', "https://www.youtube.com/embed/ruIciRNDrDA"],
 ];
 const TEST_LECTURER = [
   ['시험모드 둘러보기', "https://www.youtube.com/embed/ruIciRNDrDA"],
