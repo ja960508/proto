@@ -107,7 +107,7 @@ body {
 .tutorial-section__content {
   width: 100%;
   position: relative;
-  border-radius: 1.25rem;
+  border-radius: 20px;
   margin-bottom: 7rem;
 }
 
@@ -165,10 +165,10 @@ body {
 
 /* heedae add */
 .tutorial-section__content {
-  padding-bottom: 10%;
+  padding-top: 3%;
+  padding-bottom: 3%;
   background-color: #ffffff;
-  border-bottom-left-radius : 20px;
-  border-bottom-right-radius: 20px;
+  border-radius : 20px;
 }
 .video-box {
   position: relative;
@@ -212,7 +212,7 @@ body {
   }
 
   .tutorial-section {
-    padding: 3rem 5%;
+    padding: 3rem 3%;
   }
   .tutorial-section__mode {
     padding: 0;
