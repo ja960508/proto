@@ -204,6 +204,7 @@ body {
   }
   .join-buttons {
     top: 10rem;
+    color: white !important;
   }
 
   .joiner-mode {
