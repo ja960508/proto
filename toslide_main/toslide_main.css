@@ -235,6 +235,7 @@ body {
     margin-bottom: 1rem;
   }
   .tutorial-section__content {
+    width: 100%;
     margin-bottom: 0;
   }
 }
