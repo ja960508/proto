@@ -206,7 +206,7 @@ body {
 }
 
 /* media query */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
   .header {
     padding: 1.25rem 1.25rem;
   }
