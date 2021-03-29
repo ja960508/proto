@@ -24,30 +24,37 @@
         <section class="join-section position-relative">
             <img src="" alt="join-section-background-img" id="bg_img" class="join-section-background-img">
             <div class="join-buttons" id="toslide_join_button_container">
-                <button id="lbutton"  class="join join__lecturer" disabled onclick="loginToslide_lecturer()"><label class="toslide-font-very-large-bold">강사로 참여하기</label></button>
-                <button id="sbutton" class="join join__audience" disabled onclick="loginToslide_student()"><label class="toslide-font-very-large-bold">학생으로 참여하기</label></button>
+                <button id="lbutton"  class="join join__lecturer toslide-font-very-large-bold" disabled onclick="loginToslide_lecturer()">강사로 참여하기</button>
+                <button id="sbutton" class="join join__audience toslide-font-very-large-bold" disabled onclick="loginToslide_student()">학생으로 참여하기</button>
             </div>
         </section>
         <section class="tutorial-section">
+          <div class="wrap-tutorial-section">
             <div class="tutorial-section__header">
-                <ul class="tutorial-section__mode"> 
-                    <li class="tutorial-section__mode__items toslide-font-very-large-bold selected" onclick="tutorialModeSelect(this)">투슬라이드 소개</li>
-                    <li class="tutorial-section__mode__items toslide-font-very-large-bold" onclick="tutorialModeSelect(this)">메시지 및 사진으로 질의응답</li>
-                    <li class="tutorial-section__mode__items toslide-font-very-large-bold" onclick="tutorialModeSelect(this)">파일을 공유하는 온라인 강의</li>
-                    <li class="tutorial-section__mode__items toslide-font-very-large-bold" onclick="tutorialModeSelect(this)">부정행위 방지하는 온라인 시험</li>
-                </ul>
+              <ul class="tutorial-section__mode"> 
+                <li class="tutorial-section__mode__items toslide-font-very-large-bold selected" onclick="tutorialModeSelect(this)">투슬라이드 소개</li>
+                <li class="tutorial-section__mode__items toslide-font-very-large-bold" onclick="tutorialModeSelect(this)">메시지 및 사진으로 질의응답</li>
+                <li class="tutorial-section__mode__items toslide-font-very-large-bold" onclick="tutorialModeSelect(this)">파일을 공유하는 온라인 강의</li>
+                <li class="tutorial-section__mode__items toslide-font-very-large-bold" onclick="tutorialModeSelect(this)">부정행위 방지하는 온라인 시험</li>
+              </ul>
             </div>
             <div class="tutorial-section__content">
-                <img src="./images/tutorial_toslide_intro.png" alt="tutorial-section__img-content" id="tutorial_img_content" class="tutorial-section__content__img-content">
-                <div class="joiner-mode d-none">
-                    <button class="joiner-mode-btn selected" id="select_lecturer" onclick="selectTutorialContent(this)">강사입장</button>
-                    <button class="joiner-mode-btn" id="select_student" onclick="selectTutorialContent(this)">학생입장</button>
-                </div>
+              <img src="./images/tutorial_toslide_intro.jpg" alt="tutorial-section__img-content" id="tutorial_img_content" class="tutorial-section__content__img-content">
+              <div class="joiner-mode d-none">
+                <button class="joiner-mode-btn selected" id="select_lecturer" onclick="selectTutorialContent(this)">강사입장</button>
+                <button class="joiner-mode-btn" id="select_student" onclick="selectTutorialContent(this)">학생입장</button>
+              </div>
+              <div id="tutorial-videos">
+              </div>
             </div>
+          </div>
         </section>
         <footer class="footer">
             <img src="./images/toslide_logo.png" alt="logo" class="logo">
-            <p class="footer-text copyright-text toslide-font-large-normal">Copyright © SunnyGraphy, Inc. Seoul, Korea</p>
+            <p class="footer-text copyright-text toslide-font-large-normal">Copyright © 
+              <a href="https://sites.google.com/view/dmphongik">Hongik DMP Labs</a> + 
+              <a href="https://sunnygraphy.com/">SunnyGraphy</a> Inc.
+            </p>
             <p class="footer-text emali-text toslide-font-large-normal">leeh@hongik.ac.kr</p>
             <a href="#" class="footer-text privacy-anchor toslide-font-large-normal">Privacy Policy</a>
         </footer>
