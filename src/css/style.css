@@ -93,10 +93,10 @@ input[type="email"] {
 }
 
 .toslide-font-very-large-bold {
-  font: normal normal 700 1vw Roboto;
+  font: normal normal 700 20px/24px Roboto;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
   .toslide-font-very-large-bold {
     font: normal normal 700 14px Roboto;
   }

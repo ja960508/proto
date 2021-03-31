@@ -27,6 +27,7 @@ body {
 .translate {
   margin-right: 1rem;
   color: var(--toslide-normal-gray);
+  outline: none !important;
 }
 .translate.active {
   color: black;
@@ -59,7 +60,7 @@ body {
 }
 
 .join {
-  width: 10.625%;
+  width: 204px;
   min-width: 120px;
   height: 46px;
   display: flex;
@@ -139,7 +140,7 @@ body {
   outline: none !important;
 }
 
-.joiner-mode-btn.hover,
+.joiner-mode-btn:hover,
 .joiner-mode-btn.selected {
   color: var(--toslide-blue);
   text-decoration: underline;
@@ -217,6 +218,13 @@ body {
   .join-buttons {
     top: 10rem;
     color: white !important;
+  }
+
+  .join {
+    width: 150px;
+  }
+  .join__lecturer {
+    margin-right: 0.5rem;
   }
 
   .joiner-mode {
