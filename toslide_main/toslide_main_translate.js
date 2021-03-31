@@ -22,7 +22,16 @@ function textTranslate(target) {
     "강사입장",
     "학생입장",
   ];
-  const engText = ["a", "a", "a", "a", "a", "a", "a", "a"];
+  const engText = [
+    "Join as a Lecturer",
+    "Join as a Student",
+    "Introduce Toslide",
+    "Audience Presentation System",
+    "Online Lecture",
+    "Online Exam",
+    "Join as a Lecturer",
+    "Join as a Student",
+  ];
 
   switch (target.textContent) {
     case "한국어":
