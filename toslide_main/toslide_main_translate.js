@@ -25,9 +25,9 @@ function textTranslate(target) {
   const engText = [
     "Join as a Lecturer",
     "Join as a Student",
-    "Introduce Toslide",
-    "Audience Presentation System",
-    "Online Lecture",
+    "Introduction Toslide",
+    "Audience Presentation System(APS)",
+    "Online Class",
     "Online Exam",
     "Join as a Lecturer",
     "Join as a Student",
