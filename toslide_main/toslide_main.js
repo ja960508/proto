@@ -162,7 +162,7 @@ function getTutorialImageContent(
           const div = document.createElement("div");
           div.className = "video-box";
           div.innerHTML = `
-          <figcaption>질의응답 모바일 컨트롤</figcaption>
+          <figcaption>QnA Mobile Control</figcaption>
           <img src="./images/qa_control.jpg" class="video" height="100%" />
           `;
           document.getElementById("tutorial-videos").appendChild(div);
