@@ -1,6 +1,7 @@
 function textTranslate(target) {
   const korean = document.querySelector(".translate__korean");
   const english = document.querySelector(".translate__english");
+  const bgImg = document.querySelector("#bg_img");
   const domArray = [
     document.querySelector("#lbutton"),
     document.querySelector("#sbutton"),
@@ -35,18 +36,26 @@ function textTranslate(target) {
 
   switch (target.textContent) {
     case "한국어":
-      !korean.classList.contains("active") && translate(domArray, koreanText);
-      !korean.classList.contains("active") &&
+      if (!korean.classList.contains("active")) {
+        translate(domArray, koreanText);
         english.classList.remove("active");
-      !korean.classList.contains("active") && korean.classList.add("active");
-      tutorialModeSelect(document.querySelector(".selected"));
+        korean.classList.add("active");
+        if (parent.is_mobile()) {
+          document.getElementById("bg_img").src = "./images/homepage_m_bg.jpg";
+        } else {
+          document.getElementById("bg_img").src = "./images/homepage_pc_bg.jpg";
+        }
+        tutorialModeSelect(document.querySelector(".selected"));
+      }
       break;
     case "English":
-      !english.classList.contains("active") && translate(domArray, engText);
-      !english.classList.contains("active") &&
+      if (!english.classList.contains("active")) {
+        translate(domArray, engText);
         korean.classList.remove("active");
-      !english.classList.contains("active") && english.classList.add("active");
-      tutorialModeSelect(document.querySelector(".selected"));
+        english.classList.add("active");
+        bgImg.src = "./images/eng_image/homepage_pc_bg_eng.jpg";
+        tutorialModeSelect(document.querySelector(".selected"));
+      }
       break;
   }
 }

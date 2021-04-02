@@ -88,7 +88,6 @@ function getTutorialImageContent(
   const languageMode = getLanguageMode();
   const imgContent = document.querySelector("#tutorial_img_content");
   const joinerMode = document.querySelector(".joiner-mode");
-  console.log(languageMode);
   removeRow();
   if (languageMode === "한국어") {
     switch (target.textContent) {
