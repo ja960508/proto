@@ -30,6 +30,12 @@ const TEST_STUDENT = [
   ["시험모드 활용하기", "https://www.youtube.com/embed/ruIciRNDrDA"],
 ];
 
+function getLanguageMode() {
+  const activeMode = document.querySelector(".active");
+
+  return activeMode.innerText;
+}
+
 function selectTutorialContent(target) {
   let selectedContent;
 
@@ -79,62 +85,121 @@ function getTutorialImageContent(
     ? selectLecturer
     : selectStudent
 ) {
+  const languageMode = getLanguageMode();
   const imgContent = document.querySelector("#tutorial_img_content");
   const joinerMode = document.querySelector(".joiner-mode");
+  console.log(languageMode);
   removeRow();
-  switch (target.textContent) {
-    case tutorialSectionModeItems[0].innerText:
-      imgContent.src = "./images/tutorial_toslide_intro.jpg";
-      !joinerMode.classList.contains("d-none") &&
-        joinerMode.classList.add("d-none");
-      break;
-    case tutorialSectionModeItems[1].innerText:
-      // 탭 공통 영역
-      imgContent.src = "./images/qa_benefit.jpg";
-      // 탭 개별 영역
-      if (selectedJoiner === selectLecturer) {
-        addVideoBox(QA_LECTURER);
-        // Additional image
-        const div = document.createElement("div");
-        div.className = "video-box";
-        div.innerHTML = `
-        <figcaption>질의응답 모바일 컨트롤</figcaption>
-        <img src="./images/qa_control.jpg" class="video" height="100%" />
-        `;
-        document.getElementById("tutorial-videos").appendChild(div);
-      } else {
-        addVideoBox(QA_STUDENT);
-      }
+  if (languageMode === "한국어") {
+    switch (target.textContent) {
+      case tutorialSectionModeItems[0].innerText:
+        imgContent.src = "./images/tutorial_toslide_intro.jpg";
+        !joinerMode.classList.contains("d-none") &&
+          joinerMode.classList.add("d-none");
+        break;
+      case tutorialSectionModeItems[1].innerText:
+        // 탭 공통 영역
+        imgContent.src = "./images/qa_benefit.jpg";
+        // 탭 개별 영역
+        if (selectedJoiner === selectLecturer) {
+          addVideoBox(QA_LECTURER);
+          // Additional image
+          const div = document.createElement("div");
+          div.className = "video-box";
+          div.innerHTML = `
+          <figcaption>질의응답 모바일 컨트롤</figcaption>
+          <img src="./images/qa_control.jpg" class="video" height="100%" />
+          `;
+          document.getElementById("tutorial-videos").appendChild(div);
+        } else {
+          addVideoBox(QA_STUDENT);
+        }
 
-      joinerMode.classList.contains("d-none") &&
-        joinerMode.classList.remove("d-none");
-      break;
-    case tutorialSectionModeItems[2].innerText:
-      // 탭 공통 영역
-      imgContent.src = "./images/lecture_benefit.jpg";
-      // 탭 개별 영역
-      if (selectedJoiner === selectLecturer) {
-        addVideoBox(LEC_LECTURER);
-      } else {
-        addVideoBox(LEC_STUDENT);
-      }
+        joinerMode.classList.contains("d-none") &&
+          joinerMode.classList.remove("d-none");
+        break;
+      case tutorialSectionModeItems[2].innerText:
+        // 탭 공통 영역
+        imgContent.src = "./images/lecture_benefit.jpg";
+        // 탭 개별 영역
+        if (selectedJoiner === selectLecturer) {
+          addVideoBox(LEC_LECTURER);
+        } else {
+          addVideoBox(LEC_STUDENT);
+        }
 
-      joinerMode.classList.contains("d-none") &&
-        joinerMode.classList.remove("d-none");
-      break;
-    case tutorialSectionModeItems[3].innerText:
-      // 탭 공통 영역
-      imgContent.src = "./images/test_benefit.jpg";
-      // 탭 개별 영역
-      if (selectedJoiner === selectLecturer) {
-        addVideoBox(TEST_LECTURER);
-      } else {
-        addVideoBox(TEST_STUDENT);
-      }
+        joinerMode.classList.contains("d-none") &&
+          joinerMode.classList.remove("d-none");
+        break;
+      case tutorialSectionModeItems[3].innerText:
+        // 탭 공통 영역
+        imgContent.src = "./images/test_benefit.jpg";
+        // 탭 개별 영역
+        if (selectedJoiner === selectLecturer) {
+          addVideoBox(TEST_LECTURER);
+        } else {
+          addVideoBox(TEST_STUDENT);
+        }
 
-      joinerMode.classList.contains("d-none") &&
-        joinerMode.classList.remove("d-none");
-      break;
+        joinerMode.classList.contains("d-none") &&
+          joinerMode.classList.remove("d-none");
+        break;
+    }
+  } else {
+    switch (target.textContent) {
+      case tutorialSectionModeItems[0].innerText:
+        imgContent.src = "./images/eng_image/tutorial_toslide_intro.jpg";
+        !joinerMode.classList.contains("d-none") &&
+          joinerMode.classList.add("d-none");
+        break;
+      case tutorialSectionModeItems[1].innerText:
+        // 탭 공통 영역
+        imgContent.src = "./images/eng_image/qa_benefit.jpg";
+        // 탭 개별 영역
+        if (selectedJoiner === selectLecturer) {
+          addVideoBox(QA_LECTURER);
+          // Additional image
+          const div = document.createElement("div");
+          div.className = "video-box";
+          div.innerHTML = `
+          <figcaption>질의응답 모바일 컨트롤</figcaption>
+          <img src="./images/qa_control.jpg" class="video" height="100%" />
+          `;
+          document.getElementById("tutorial-videos").appendChild(div);
+        } else {
+          addVideoBox(QA_STUDENT);
+        }
+
+        joinerMode.classList.contains("d-none") &&
+          joinerMode.classList.remove("d-none");
+        break;
+      case tutorialSectionModeItems[2].innerText:
+        // 탭 공통 영역
+        imgContent.src = "./images/eng_image/lecture_benefit.jpg";
+        // 탭 개별 영역
+        if (selectedJoiner === selectLecturer) {
+          addVideoBox(LEC_LECTURER);
+        } else {
+          addVideoBox(LEC_STUDENT);
+        }
+
+        joinerMode.classList.contains("d-none") &&
+          joinerMode.classList.remove("d-none");
+        break;
+      case tutorialSectionModeItems[3].innerText:
+        // 탭 공통 영역
+        imgContent.src = "./images/eng_image/test_benefit.jpg";
+        // 탭 개별 영역
+        if (selectedJoiner === selectLecturer) {
+          addVideoBox(TEST_LECTURER);
+        } else {
+          addVideoBox(TEST_STUDENT);
+        }
+
+        joinerMode.classList.contains("d-none") &&
+          joinerMode.classList.remove("d-none");
+        break;
+    }
   }
 }
 

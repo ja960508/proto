@@ -39,12 +39,14 @@ function textTranslate(target) {
       !korean.classList.contains("active") &&
         english.classList.remove("active");
       !korean.classList.contains("active") && korean.classList.add("active");
+      tutorialModeSelect(document.querySelector(".selected"));
       break;
     case "English":
       !english.classList.contains("active") && translate(domArray, engText);
       !english.classList.contains("active") &&
         korean.classList.remove("active");
       !english.classList.contains("active") && english.classList.add("active");
+      tutorialModeSelect(document.querySelector(".selected"));
       break;
   }
 }
