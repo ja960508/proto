@@ -21,8 +21,10 @@ body {
 
 .header-wrap {
   width: 1200px;
+  min-width: 320px;
   display: flex;
   justify-content: space-between;
+  padding-left: 16px;
 }
 
 .logo {
